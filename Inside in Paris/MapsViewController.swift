@@ -31,13 +31,13 @@ class MapsViewController: UIViewController {
         let marker1 = GMSMarker()
         marker1.position = CLLocationCoordinate2D(latitude: 48.854454, longitude: 2.355748)
         marker1.title = "Caféothèque"
-        //marker1.icon = UIImage(named: "bar_icon")
+        marker1.icon = UIImage(named: "png_skaliert_83x82")
         marker1.map = mapView
         
         let marker2 = GMSMarker()
         marker2.position = CLLocationCoordinate2D(latitude: 48.865138, longitude: 2.3626371)
         marker2.title = "Season"
-        //marker2.icon = UIImage(named: "bar_icon_map_40x40")
+        marker2.icon = UIImage(named: "100x108_300dpi")
         marker2.map = mapView
         
         let marker3 = GMSMarker()
