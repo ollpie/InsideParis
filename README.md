@@ -1,1 +1,1 @@
-# InsideParis
+# Inside-in-Paris

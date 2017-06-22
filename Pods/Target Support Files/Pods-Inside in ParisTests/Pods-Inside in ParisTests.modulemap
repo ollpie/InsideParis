@@ -1,0 +1,6 @@
+framework module Pods_Inside_in_ParisTests {
+  umbrella header "Pods-Inside in ParisTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
