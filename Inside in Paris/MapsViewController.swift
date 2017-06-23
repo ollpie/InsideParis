@@ -20,6 +20,9 @@ class MapsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
+        
         mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: self.view.bounds.height*0.123, width: self.view.bounds.width, height: self.view.bounds.height*0.88), camera: GMSCameraPosition.camera(withLatitude: 48.86, longitude: 2.35, zoom: 14))
         
         self.view.addSubview(mapView)
@@ -28,16 +31,16 @@ class MapsViewController: UIViewController {
         let mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: 40, width: 200, height: 200), camera: camera)
         self.view = mapView*/
         
+        let image = UIImage(named: "bar_icon_map")!
         let marker1 = GMSMarker()
         marker1.position = CLLocationCoordinate2D(latitude: 48.854454, longitude: 2.355748)
         marker1.title = "Caféothèque"
-        marker1.icon = UIImage(named: "png_skaliert_83x82")
+        marker1.icon = UIImage(data: UIImagePNGRepresentation(image)!, scale: 10)
         marker1.map = mapView
         
         let marker2 = GMSMarker()
         marker2.position = CLLocationCoordinate2D(latitude: 48.865138, longitude: 2.3626371)
         marker2.title = "Season"
-        marker2.icon = UIImage(named: "100x108_300dpi")
         marker2.map = mapView
         
         let marker3 = GMSMarker()
