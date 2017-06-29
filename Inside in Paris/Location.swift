@@ -41,34 +41,46 @@ class Location {
     let ofrLong: Double = 2.359
     
     //marais shopping
+    let experienceTitle: String = "Expérience"
     let experienceLat: Double = 48.863
     let experienceLong: Double = 2.360
+    let soiTitle: String = "Soi Paris"
     let soiparisLat: Double = 48.864
     let soiparisLong: Double = 2.362
+    let cactusTitle: String = "Les Succulents Cactus"
     let cactusLat: Double = 48.862
     let cactusLong: Double = 2.362
+    let merciconceptTitle: String = "Merci Concept Store"
     let merciconceptLat: Double = 48.860
     let merciconceptLong: Double = 2.364
+    let frereTitle: String = "Mariage Frères"
     let frereLat: Double = 48.857
     let frereLong: Double = 2.354
     
     //marais restaurant
+    let chouettesTitle: String = "Les Chouettes"
     let chouettesLat: Double = 48.864
     let chouettesLong: Double = 2.361
+    let mancoraTitle: String = "Máncora"
     let mancoraLat: Double = 48.865
     let mancoraLong: Double = 2.359
+    let pnymaraisTitle: String = "Pny Marais"
     let pnymaraisLat: Double = 48.863
     let pnymaraisLong: Double = 2.360
+    let jajaTitle: String = "Jaja"
     let jajaLat: Double = 48.857
     let jajaLong: Double = 2.355
     
     //marais bars
+    let lizardTitle: String = "Lizard Lounge"
     let lizardLat: Double = 48.857
     let lizardLong: Double = 2.356
+    let sherryTitle: String = "Sherry Butt"
     let sherryLat: Double = 48.853
     let sherryLong: Double = 2.362
-    let uoatLat: Double = 48.848
-    let uoatLong: Double = 2.362
+    let ouatTitle: String = "Once Upon a Time"
+    let ouatLat: Double = 48.848
+    let ouatLong: Double = 2.362
     
     var id: Int
     
@@ -76,11 +88,32 @@ class Location {
     var season: Properties!
     var pinson: Properties!
     var cinema: Properties!
+    
     var perrotin: Properties!
     var instant: Properties!
     var roman: Properties!
     var ofr: Properties!
+    
+    var experience: Properties!
+    var soi: Properties!
+    var cactus: Properties!
+    var merciConcept: Properties!
+    var frere: Properties!
+    
+    var chouettes: Properties!
+    var mancora: Properties!
+    var pnyMarais: Properties!
+    var jaja: Properties!
+    
+    var lizard: Properties!
+    var sherry: Properties!
+    var ouat: Properties!
+    
     var maraisCafes: [Properties]!
+    var maraisCulture: [Properties]!
+    var maraisShopping: [Properties]!
+    var maraisRestaurants: [Properties]!
+    var maraisBars: [Properties]!
     var maraisTotal: [[Properties]]!
     
     init(id: Int) {
@@ -89,35 +122,117 @@ class Location {
     }
 
     func initMarais() {
+        //cafes
         cafeotheque.name = cafeothequeTitle
-        cafeotheque.category = "cafe"
+        cafeotheque.mapIcon = "marais_cafe_icon"
         cafeotheque.lattitude = cafeothequeLat
         cafeotheque.longitude = cafeothequeLong
         
         season.name = seasonTitle
-        season.category = "cafe"
+        season.mapIcon = "marais_cafe_icon"
         season.lattitude = seasonLat
         season.longitude = seasonLong
         
         pinson.name = pinsonTitle
-        pinson.category = "cafe"
+        pinson.mapIcon = "marais_cafe_icon"
         pinson.lattitude = pinsonLat
         pinson.longitude = pinsonLong
         
         cinema.name = cinemaTitle
-        cinema.category = "cafe"
+        cinema.mapIcon = "marais_cafe_icon"
         cinema.lattitude = pinsonLat
         cinema.longitude = pinsonLong
         
+        //culture
         perrotin.name = perrotinTitle
-        perrotin.category = "culture"
+        perrotin.mapIcon = "marais_kultur_icon"
         perrotin.lattitude = perrotinLat
         perrotin.longitude = perrotinLong
         
         instant.name = instantTitle
-        instant.category = "culture"
+        instant.mapIcon = "marais_kultur_icon"
         instant.lattitude = instantLat
         instant.longitude = instantLong
+        
+        roman.name = romanTitle
+        roman.mapIcon = "marais_kultur_icon"
+        roman.lattitude = romanLat
+        roman.longitude = romanLong
+        
+        ofr.name = ofrTitle
+        ofr.mapIcon = "marais_kultur_icon"
+        ofr.lattitude = romanLat
+        ofr.longitude = ofrLong
+        
+        //shopping
+        experience.name = experienceTitle
+        experience.mapIcon = "marais_shopping_icon"
+        experience.lattitude = experienceLat
+        experience.longitude = experienceLong
+        
+        soi.name = soiTitle
+        soi.mapIcon = "marais_shopping_icon"
+        soi.lattitude = soiparisLat
+        soi.longitude = soiparisLong
+        
+        cactus.name = cactusTitle
+        cactus.mapIcon = "marais_shopping_icon"
+        cactus.lattitude = cactusLat
+        cactus.longitude = cactusLong
+        
+        merciConcept.name = merciconceptTitle
+        merciConcept.mapIcon = "marais_shopping_icon"
+        merciConcept.lattitude = merciconceptLat
+        merciConcept.longitude = merciconceptLong
+        
+        frere.name = frereTitle
+        frere.mapIcon = "marais_shopping_icon"
+        frere.lattitude = frereLat
+        frere.longitude = frereLong
+        
+        //restaurant
+        chouettes.name = chouettesTitle
+        chouettes.mapIcon = "marais_restaurant_icon"
+        chouettes.lattitude = chouettesLat
+        chouettes.longitude = chouettesLong
+        
+        mancora.name = mancoraTitle
+        mancora.mapIcon = "marais_restaurant_icon"
+        mancora.lattitude = mancoraLat
+        mancora.longitude = mancoraLong
+        
+        pnyMarais.name = pnymaraisTitle
+        pnyMarais.mapIcon = "marais_restaurant_icon"
+        pnyMarais.lattitude = pnymaraisLat
+        pnyMarais.longitude = pnymaraisLong
+        
+        jaja.name = jajaTitle
+        jaja.mapIcon = "marais_restaurant_icon"
+        jaja.lattitude = jajaLat
+        jaja.longitude = jajaLong
+        
+        //bars
+        lizard.name = lizardTitle
+        lizard.mapIcon = "marais_bar_icon"
+        lizard.lattitude = lizardLat
+        lizard.longitude = lizardLong
+        
+        sherry.name = sherryTitle
+        sherry.mapIcon = "marais_bar_icon"
+        sherry.lattitude = sherryLat
+        sherry.longitude = sherryLong
+        
+        ouat.name = ouatTitle
+        ouat.mapIcon = "marais_bar_icon"
+        ouat.lattitude = ouatLat
+        ouat.longitude = ouatLong
+        
+        maraisCafes = [cafeotheque, season, pinson, cinema]
+        maraisCulture = [perrotin, instant, roman, ofr]
+        maraisShopping = [experience, soi, cactus, merciConcept, frere]
+        maraisRestaurants = [chouettes, mancora, pnyMarais, jaja]
+        maraisBars = [lizard, sherry, ouat]
+        maraisTotal = [maraisCafes, maraisCulture, maraisShopping, maraisRestaurants, maraisBars]
     }
     
 }
@@ -126,5 +241,5 @@ struct Properties {
     var name = ""
     var longitude = 0.0
     var lattitude = 0.0
-    var category = ""
+    var mapIcon = ""
 }
