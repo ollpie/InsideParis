@@ -94,9 +94,7 @@ class Location {
     let ouatTitle: String = "Once Upon a Time"
     let ouatLat: Double = 48.848
     let ouatLong: Double = 2.362
-    
-    var id: Int
-    
+
     var cafeotheque: Properties!
     var season: Properties!
     var pinson: Properties!
@@ -129,9 +127,7 @@ class Location {
     var maraisBars: [Properties]!
     var maraisTotal: [[Properties]]!
     
-    init(id: Int) {
-        self.id = id
-        
+    init() {
         initMarais()
     }
 

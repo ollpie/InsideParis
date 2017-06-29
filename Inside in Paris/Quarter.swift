@@ -75,8 +75,7 @@ class Quarter {
         allCategoryWidths = [maraisCategoryWidth, canalCategoryWidth, montmartreCategoryWidth]
         allCategoryHeights = [maraisCategoryHeight, canalCategoryHeight, montmartreCategoryHeight]
         
-        print("Hallo")
-        maraisLocations = Location(id: self.id)
+        maraisLocations = Location()
     }
     
     func getName() -> String {

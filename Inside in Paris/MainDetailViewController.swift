@@ -53,16 +53,14 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func setupMapButtons() {
         btn = UIButton(type: UIButtonType.system)
-        btn.setTitle("Lexi", for: UIControlState.normal)
         btn.bounds = CGRect(x: 0, y: 0, width: screenSize.width, height: 190)
         btn.center = CGPoint(x: screenSize.width/2, y: screenSize.height * CGFloat(categoryHeight)-80)
-        btn.backgroundColor = UIColor.darkGray
         scrollView.addSubview(btn)
         btn.addTarget(self, action: #selector(showSingleLocation(_:)), for: .touchUpInside)
     }
     
     func showSingleLocation(_ button: UIButton) {
-        print(button.currentTitle as Any)
+        performSegue(withIdentifier: "toSingleMapLocation", sender: self)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -102,6 +100,14 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.setContentOffset(CGPoint(x: xPos, y: 0), animated: true)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toSingleMapLocation" {
+            let controller = segue.destination as! SingpleMapLocationViewController
+            controller.category = category
+            controller.item = currentPage-1
+        }
+    }
+    
     //These two functions handle the custom navigation segues
     @IBAction func prepareForUnwindToDetailView (segue:UIStoryboardSegue){
         
@@ -111,5 +117,4 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         let segue = UnwindLeftRightTransitionSegue(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
         segue.perform()
     }
-    
 }
