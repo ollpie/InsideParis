@@ -33,6 +33,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func setupUI() {
         self.scrollView.delegate = self
+        self.scrollView.isDirectionalLockEnabled = true
         backgroundImage = UIImageView()
         backgroundImage.frame = CGRect(x: 0, y: 0, width: screenSize.width * CGFloat(categoryWidth), height: screenSize.height * CGFloat(categoryHeight))
         backgroundImage.image = UIImage(named: categoryURL)
