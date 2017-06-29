@@ -56,6 +56,8 @@ class Quarter {
     let allCategoryWidths: [[Int]]
     let allCategoryHeights: [[Int]]
     
+    let maraisLocations: Location
+    
     var id: Int
     
     init(id: Int) {
@@ -72,6 +74,9 @@ class Quarter {
         allCategoryURLs = [maraisCategoryURLs, canalCategoryURLs, montmartreCategoryURLs]
         allCategoryWidths = [maraisCategoryWidth, canalCategoryWidth, montmartreCategoryWidth]
         allCategoryHeights = [maraisCategoryHeight, canalCategoryHeight, montmartreCategoryHeight]
+        
+        print("Hallo")
+        maraisLocations = Location(id: self.id)
     }
     
     func getName() -> String {
@@ -139,6 +144,24 @@ class Quarter {
             break
         case 2:
             result = montmartreWOVideoURL
+            break
+        default:
+            break
+        }
+        return result!
+    }
+    
+    func getLocations() -> [[Properties]] {
+        var result: [[Properties]]?
+        switch id {
+        case 0:
+            result = maraisLocations.getAllLocations()
+            break
+        case 1:
+            result = maraisLocations.getAllLocations()
+            break
+        case 2:
+            result = maraisLocations.getAllLocations()
             break
         default:
             break

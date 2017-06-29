@@ -21,6 +21,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     var categoryURL: String!
     var categoryWidth: Int!
     var categoryHeight: Int!
+    var btn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         backgroundImage.image = UIImage(named: categoryURL)
         scrollView.addSubview(backgroundImage)
         setupConstraints()
+        setupMapButtons()
     }
     
     func setupConstraints() {
@@ -49,16 +51,32 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint, widthConstraint, heightConstraint])
     }
     
+    func setupMapButtons() {
+        btn = UIButton(type: UIButtonType.system)
+        btn.setTitle("Lexi", for: UIControlState.normal)
+        btn.bounds = CGRect(x: 0, y: 0, width: screenSize.width, height: 190)
+        btn.center = CGPoint(x: screenSize.width/2, y: screenSize.height * CGFloat(categoryHeight)-80)
+        btn.backgroundColor = UIColor.darkGray
+        scrollView.addSubview(btn)
+        btn.addTarget(self, action: #selector(showSingleLocation(_:)), for: .touchUpInside)
+    }
+    
+    func showSingleLocation(_ button: UIButton) {
+        print(button.currentTitle as Any)
+    }
+    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if (self.lastContentOffset > scrollView.contentOffset.x) {
             print("links")
             currentPage -= 1
             scrollToTop()
+            btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
         else if (self.lastContentOffset < scrollView.contentOffset.x) {
             print("rechts")
             currentPage += 1
             scrollToTop()
+            btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
         self.lastContentOffset = scrollView.contentOffset.x
     }
