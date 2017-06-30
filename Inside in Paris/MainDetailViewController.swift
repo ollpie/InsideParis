@@ -22,6 +22,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     var categoryWidth: Int!
     var categoryHeight: Int!
     var btn: UIButton!
+    var initialContentOffset: CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func setupUI() {
         self.scrollView.delegate = self
-        self.scrollView.isDirectionalLockEnabled = true
+        
         backgroundImage = UIImageView()
         backgroundImage.frame = CGRect(x: 0, y: 0, width: screenSize.width * CGFloat(categoryWidth), height: screenSize.height * CGFloat(categoryHeight))
         backgroundImage.image = UIImage(named: categoryURL)
@@ -52,6 +53,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint, widthConstraint, heightConstraint])
     }
     
+    //Map stuff
     func setupMapButtons() {
         btn = UIButton(type: UIButtonType.system)
         btn.bounds = CGRect(x: 0, y: 0, width: screenSize.width, height: 190)
@@ -62,6 +64,11 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func showSingleLocation(_ button: UIButton) {
         performSegue(withIdentifier: "toSingleMapLocation", sender: self)
+    }
+    
+    //scrollView stuf
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        initialContentOffset = scrollView.contentOffset
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -78,6 +85,64 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
             btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
         self.lastContentOffset = scrollView.contentOffset.x
+    }
+    
+    /*func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scrollDirection: ScrollDirection = determineScrollDirectionAxis()
+
+        if (scrollDirection == .ScrollDirectionVertical){
+
+        } else if (scrollDirection == .ScrollDirectionHorizontal){
+
+        } else {
+            var newOffset: CGPoint
+            if (scrollView.contentOffset.x > scrollView.contentOffset.y) {
+                newOffset = CGPoint(x: scrollView.contentOffset.x, y: initialContentOffset.y)
+            }else{
+                newOffset = CGPoint(x: initialContentOffset.x, y: scrollView.contentOffset.y)
+            }
+            scrollView.setContentOffset(newOffset, animated: false)
+        }
+    }*/
+    
+    func determineScrollDirection () -> ScrollDirection{
+
+        var scrollDirection: ScrollDirection
+        if (initialContentOffset.x != scrollView.contentOffset.x &&
+            initialContentOffset.y != scrollView.contentOffset.y) {
+            scrollDirection = .ScrollDirectionCrazy
+        } else {
+            if (initialContentOffset.x > scrollView.contentOffset.x) {
+                scrollDirection = .ScrollDirectionLeft
+            } else if (initialContentOffset.x < scrollView.contentOffset.x) {
+                scrollDirection = .ScrollDirectionRight
+            } else if (initialContentOffset.y > scrollView.contentOffset.y) {
+                scrollDirection = .ScrollDirectionUp
+            } else if (initialContentOffset.y < scrollView.contentOffset.y) {
+                scrollDirection = .ScrollDirectionDown
+            } else {
+                scrollDirection = .ScrollDirectionNone
+            }
+        }
+        
+        return scrollDirection;
+    }
+    
+    func determineScrollDirectionAxis() -> ScrollDirection {
+        let scrollDirection: ScrollDirection = determineScrollDirection()
+        
+        switch scrollDirection {
+        case .ScrollDirectionRight:
+            return .ScrollDirectionHorizontal
+        case .ScrollDirectionLeft:
+            return .ScrollDirectionHorizontal
+        case .ScrollDirectionUp:
+            return .ScrollDirectionVertical
+        case .ScrollDirectionDown:
+            return .ScrollDirectionVertical
+        default:
+            return .ScrollDirectionNone
+        }
     }
     
     func scrollToTop() {
@@ -118,4 +183,8 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         let segue = UnwindLeftRightTransitionSegue(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
         segue.perform()
     }
+}
+
+enum ScrollDirection {
+    case ScrollDirectionNone, ScrollDirectionCrazy, ScrollDirectionUp, ScrollDirectionDown, ScrollDirectionLeft, ScrollDirectionRight, ScrollDirectionHorizontal, ScrollDirectionVertical
 }
