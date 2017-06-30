@@ -247,9 +247,120 @@ class Location {
     var general: Properties!
     var perchoire: Properties!
     
+    //montmartre cafes
+    let soulkitchenTitle: String = "Soulkitchen"
+    let soulkitchenLat: Double = 48.8739105
+    let soulkitchenLong: Double = 2.3622913
     
+    let tibornaTitle: String = "La Tiborna"
+    let tibornaLat: Double = 48.8735065
+    let tibornaLong: Double = 2.3626127
     
+    let marcelTitle: String = "Marcel"
+    let marcelLat: Double = 48.8716825
+    let marcelLong: Double = 2.3623803
     
+    let ridersTitle: String = "Melali Coffee Riders"
+    let ridersLong: Double = 48.8710013
+    let ridersLat: Double = 2.3576007
+    
+    //montmartre culture
+    let cinemastudioTitle: String = "Cinéma Studio 28"
+    let cinemastudioLat: Double = 48.8649878
+    let cinemastudioLong: Double = 2.364209
+    
+    let anotherwayTitle: String = "Galerie Another Way"
+    let anotherwayLat: Double = 48.8683961
+    let anotherwayLong: Double = 2.3677274
+    
+    let buchladenTitle: String = "Librairie Buchladen"
+    let buchladenLat: Double = 48.8712774
+    let buchladenLong: Double = 2.3621676
+    
+    let louxorTitle: String = "Louxor"
+    let louxorLat: Double = 48.8727112
+    let louxorLong: Double = 2.3615544
+    
+    //montmartre shopping
+    let leonTitle: String = "Leon & Harper"
+    let leonLat: Double = 48.8740204
+    let leonLong: Double = 2.3606226
+    
+    let atelierTitle: String = "Atelier 15"
+    let atelierLat: Double = 48.8732428
+    let atelierLong: Double = 2.3608911
+    
+    let majestockTitle: String = "Maje Stock"
+    let majestockLat: Double = 48.8705547
+    let majestockLong: Double = 2.3631829
+    
+    let cousinpaulTitle: String = "La Case De Cousin Paul"
+    let cousinpaulLat: Double = 48.871272
+    let cousinpaulLong: Double = 2.3607999
+    
+    let sauverTitle: String = "Sauver Le Monde"
+    let sauverLat: Double = 48.8704843
+    let sauverLong: Double = 2.3608514
+    
+    //montmartre restaurant
+    let vingtTitle: String = "Vingt Heures Vin"
+    let vingtLat: Double = 48.8759685
+    let vingtLong: Double = 2.3674263
+    
+    let balancoireTitle: String = "La Balaçoire"
+    let balancoireLat: Double = 48.8675372
+    let balancoireLong: Double = 2.3680767
+    
+    let aportesTitle: String = "Les Aportes de Pigalle"
+    let aportesLat: Double = 48.8696896
+    let aportesLong: Double = 2.3649721
+    
+    let briganteTitle: String = "Il Brigante"
+    let briganteLat: Double = 48.8644479
+    let briganteLong: Double = 2.3679266
+    
+    //montmartre bars
+    let particulierTitle: String = "Le Très Particulier"
+    let particulierLat: Double = 48.8684879
+    let particulierLong: Double = 2.3595929
+    
+    let prohiboTitle: String = "Prohibo"
+    let prohiboLat: Double = 48.8753225
+    let prohiboLong: Double = 2.35802
+    
+    let persifleurTitle: String = "Persifleur"
+    let persifleurLat: Double = 48.8724781
+    let persifleurLong: Double = 2.3632998
+    
+    let marlusseTitle: String = "Marlusse Et Lapin"
+    let marlusseLat: Double = 48.8654558
+    let marlusseLong: Double = 2.3798288
+    
+    var soulkitchen: Properties!
+    var tiborna: Properties!
+    var marcel: Properties!
+    var riders: Properties!
+    
+    var cinemastudio: Properties!
+    var anotherway: Properties!
+    var buchladen: Properties!
+    var louxor: Properties!
+    
+    var leon: Properties!
+    var atelier: Properties!
+    var majestock: Properties!
+    var cousinpaul: Properties!
+    var sauver: Properties!
+    
+    var vingt: Properties!
+    var balancoire: Properties!
+    var aportes: Properties!
+    var brigante: Properties!
+    
+    var particulieur: Properties!
+    var prohibo: Properties!
+    var persifleur: Properties!
+    var marlusse: Properties!
     
     var maraisCafes: [Properties]!
     var maraisCulture: [Properties]!
@@ -266,7 +377,7 @@ class Location {
     var martinTotal: [[Properties]]!
     
     var montmartreCafes: [Properties]!
-    var maontmartreCulture: [Properties]!
+    var montmartreCulture: [Properties]!
     var montmartreShopping: [Properties]!
     var montmartreRestaurants: [Properties]!
     var montmartreBars: [Properties]!
@@ -275,6 +386,7 @@ class Location {
     init() {
         initMarais()
         initMartin()
+        initMontmartre()
     }
 
     func initMarais() {
@@ -545,6 +657,138 @@ class Location {
         perchoire.longitude = perchoirLong
     }
     
+    func initMontmartre() {
+        soulkitchen = Properties()
+        soulkitchen.name = soulkitchenTitle
+        soulkitchen.mapIcon = "montmartre_cafe_icon"
+        soulkitchen.lattitude = soulkitchenLat
+        soulkitchen.longitude = soulkitchenLong
+        
+        tiborna = Properties()
+        tiborna.name = tibornaTitle
+        tiborna.mapIcon = "montmartre_cafe_icon"
+        tiborna.lattitude = tibornaLat
+        tiborna.longitude = tibornaLong
+        
+        marcel = Properties()
+        marcel.name = marcelTitle
+        marcel.mapIcon = "montmartre_cafe_icon"
+        marcel.lattitude = marcelLat
+        marcel.longitude = marcelLong
+        
+        riders = Properties()
+        riders.name = ridersTitle
+        riders.mapIcon = "montmartre_cafe_icon"
+        riders.lattitude = ridersLat
+        riders.longitude = ridersLong
+        
+        //Culture
+        cinemastudio = Properties()
+        cinemastudio.name = cinemastudioTitle
+        cinemastudio.mapIcon = "montmartre_kultur_icon"
+        cinemastudio.lattitude = cinemastudioLat
+        cinemastudio.longitude = cinemastudioLong
+        
+        anotherway = Properties()
+        anotherway.name = anotherwayTitle
+        anotherway.mapIcon = "montmartre_kultur_icon"
+        anotherway.lattitude = anotherwayLat
+        anotherway.longitude = anotherwayLong
+        
+        buchladen = Properties()
+        buchladen.name = buchladenTitle
+        buchladen.mapIcon = "montmartre_kultur_icon"
+        buchladen.lattitude = buchladenLat
+        buchladen.longitude = buchladenLong
+        
+        louxor = Properties()
+        louxor.name = louxorTitle
+        louxor.mapIcon = "montmartre_kultur_icon"
+        louxor.lattitude = louxorLat
+        louxor.longitude = louxorLong
+        
+        //shopping
+        leon = Properties()
+        leon.name = leonTitle
+        leon.mapIcon = "montmartre_shopping_icon"
+        leon.lattitude = leonLat
+        leon.longitude = leonLong
+        
+        atelier = Properties()
+        atelier.name = atelierTitle
+        atelier.mapIcon = "montmartre_shopping_icon"
+        atelier.lattitude = atelierLat
+        atelier.longitude = atelierLong
+        
+        majestock = Properties()
+        majestock.name = majestockTitle
+        majestock.mapIcon = "montmartre_shopping_icon"
+        majestock.lattitude = majestockLat
+        majestock.longitude = majestockLong
+        
+        cousinpaul = Properties()
+        cousinpaul.name = cousinpaulTitle
+        cousinpaul.mapIcon = "montmartre_shopping_icon"
+        cousinpaul.lattitude = cousinpaulLat
+        cousinpaul.longitude = cousinpaulLong
+        
+        sauver = Properties()
+        sauver.name = sauverTitle
+        sauver.mapIcon = "montmartre_shopping_icon"
+        sauver.lattitude = sauverLat
+        sauver.longitude = sauverLong
+        
+        //restaurants
+        vingt = Properties()
+        vingt.name = vingtTitle
+        vingt.mapIcon = "montmartre_restaurant_icon"
+        vingt.lattitude = vingtLat
+        vingt.longitude = vingtLong
+        
+        balancoire = Properties()
+        balancoire.name = balancoireTitle
+        balancoire.mapIcon = "montmartre_restaurant_icon"
+        balancoire.lattitude = balancoireLat
+        balancoire.longitude = balancoireLong
+        
+        aportes = Properties()
+        aportes.name = aportesTitle
+        aportes.mapIcon = "montmartre_restaurant_icon"
+        aportes.lattitude = aportesLat
+        aportes.longitude = aportesLong
+        
+        brigante = Properties()
+        brigante.name = briganteTitle
+        brigante.mapIcon = "montmartre_restaurant_icon"
+        brigante.lattitude = briganteLat
+        brigante.longitude = briganteLong
+        
+        //bars
+        particulieur = Properties()
+        particulieur.name = particulierTitle
+        particulieur.mapIcon = "montmartre_bar_icon"
+        particulieur.lattitude = particulierLat
+        particulieur.longitude = particulierLong
+        
+        prohibo = Properties()
+        prohibo.name = prohiboTitle
+        prohibo.mapIcon = "montmartre_bar_icon"
+        prohibo.lattitude = prohiboLat
+        prohibo.longitude = prohiboLong
+        
+        persifleur = Properties()
+        persifleur.name = persifleurTitle
+        persifleur.mapIcon = "montmartre_bar_icon"
+        persifleur.lattitude = persifleurLat
+        persifleur.longitude = persifleurLong
+        
+        marlusse = Properties()
+        marlusse.name = marlusseTitle
+        marlusse.mapIcon = "montmartre_bar_icon"
+        marlusse.lattitude = marlusseLat
+        marlusse.longitude = marlusseLong
+    }
+    
     func getAllMaraisLocations() -> [[Properties]] {
         maraisCafes = [cafeotheque, season, pinson, cinema]
         maraisCulture = [perrotin, instant, roman, ofr]
@@ -565,6 +809,16 @@ class Location {
         return martinTotal
     }
     
+    func getAllMontmartreLocations() -> [[Properties]] {
+        montmartreCafes = [soulkitchen, tiborna, marcel, riders]
+        montmartreCulture = [cinemastudio, anotherway, buchladen, louxor]
+        montmartreShopping = [leon, atelier, majestock, cousinpaul, sauver]
+        montmartreRestaurants = [vingt, balancoire, aportes, brigante]
+        montmartreBars = [particulieur, prohibo, persifleur, marlusse]
+        montmartreTotal = [montmartreCafes, montmartreCulture, montmartreShopping, montmartreRestaurants, montmartreBars]
+        return montmartreTotal
+    }
+    
     func getMaraisCenter() -> Properties {
         var center = Properties()
         center.lattitude = maraisFocusLat
@@ -573,6 +827,13 @@ class Location {
     }
     
     func getMartinCenter() -> Properties {
+        var center = Properties()
+        center.lattitude = martinFocusLat
+        center.longitude = martinFocusLong
+        return center
+    }
+    
+    func getMontmartreCenter() -> Properties {
         var center = Properties()
         center.lattitude = martinFocusLat
         center.longitude = martinFocusLong

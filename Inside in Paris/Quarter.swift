@@ -178,7 +178,7 @@ class Quarter {
             center = locations.getMartinCenter()
             break
         case 2:
-            center = locations.getMartinCenter()
+            center = locations.getMontmartreCenter()
             break
         default:
             break
