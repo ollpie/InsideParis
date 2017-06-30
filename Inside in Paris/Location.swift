@@ -16,6 +16,9 @@ class Location {
     let martinFocusLat = 48.8724781
     let martinFocusLong = 2.3632998
     
+    let montmartreFocusLat = 48.88915
+    let montmartreFocusLong = 2.3423
+    
     //marais cafes
     let cafeothequeTitle: String = "Cafeothèque"
     let cafeothequeLat: Double = 48.854429
@@ -249,92 +252,92 @@ class Location {
     
     //montmartre cafes
     let soulkitchenTitle: String = "Soulkitchen"
-    let soulkitchenLat: Double = 48.8739105
-    let soulkitchenLong: Double = 2.3622913
+    let soulkitchenLat: Double = 48.88915
+    let soulkitchenLong: Double = 2.3423
     
     let tibornaTitle: String = "La Tiborna"
-    let tibornaLat: Double = 48.8735065
-    let tibornaLong: Double = 2.3626127
+    let tibornaLat: Double = 48.88606
+    let tibornaLong: Double = 2.33651
     
     let marcelTitle: String = "Marcel"
-    let marcelLat: Double = 48.8716825
-    let marcelLong: Double = 2.3623803
+    let marcelLat: Double = 48.88838
+    let marcelLong: Double = 2.33539
     
     let ridersTitle: String = "Melali Coffee Riders"
-    let ridersLong: Double = 48.8710013
-    let ridersLat: Double = 2.3576007
+    let ridersLong: Double = 48.89046
+    let ridersLat: Double = 2.33925
     
     //montmartre culture
     let cinemastudioTitle: String = "Cinéma Studio 28"
-    let cinemastudioLat: Double = 48.8649878
-    let cinemastudioLong: Double = 2.364209
+    let cinemastudioLat: Double = 48.88605
+    let cinemastudioLong: Double = 2.33551
     
     let anotherwayTitle: String = "Galerie Another Way"
-    let anotherwayLat: Double = 48.8683961
-    let anotherwayLong: Double = 2.3677274
+    let anotherwayLat: Double = 48.88615
+    let anotherwayLong: Double = 2.33668
     
     let buchladenTitle: String = "Librairie Buchladen"
-    let buchladenLat: Double = 48.8712774
-    let buchladenLong: Double = 2.3621676
+    let buchladenLat: Double = 48.88579
+    let buchladenLong: Double = 2.33593
     
     let louxorTitle: String = "Louxor"
-    let louxorLat: Double = 48.8727112
-    let louxorLong: Double = 2.3615544
+    let louxorLat: Double = 48.8835
+    let louxorLong: Double = 2.34992
     
     //montmartre shopping
     let leonTitle: String = "Leon & Harper"
-    let leonLat: Double = 48.8740204
-    let leonLong: Double = 2.3606226
+    let leonLat: Double = 48.88543
+    let leonLong: Double = 2.33636
     
     let atelierTitle: String = "Atelier 15"
-    let atelierLat: Double = 48.8732428
-    let atelierLong: Double = 2.3608911
+    let atelierLat: Double = 48.88573
+    let atelierLong: Double = 2.3367
     
     let majestockTitle: String = "Maje Stock"
-    let majestockLat: Double = 48.8705547
-    let majestockLong: Double = 2.3631829
+    let majestockLat: Double = 48.88393
+    let majestockLong: Double = 2.3398
     
     let cousinpaulTitle: String = "La Case De Cousin Paul"
-    let cousinpaulLat: Double = 48.871272
-    let cousinpaulLong: Double = 2.3607999
+    let cousinpaulLat: Double = 48.88422
+    let cousinpaulLong: Double = 2.34203
     
     let sauverTitle: String = "Sauver Le Monde"
-    let sauverLat: Double = 48.8704843
-    let sauverLong: Double = 2.3608514
+    let sauverLat: Double = 48.88352
+    let sauverLong: Double = 2.34159
     
     //montmartre restaurant
     let vingtTitle: String = "Vingt Heures Vin"
-    let vingtLat: Double = 48.8759685
-    let vingtLong: Double = 2.3674263
+    let vingtLat: Double = 48.88628
+    let vingtLong: Double = 2.33332
     
     let balancoireTitle: String = "La Balaçoire"
-    let balancoireLat: Double = 48.8675372
-    let balancoireLong: Double = 2.3680767
+    let balancoireLat: Double = 48.88527
+    let balancoireLong: Double = 2.33523
     
     let aportesTitle: String = "Les Aportes de Pigalle"
-    let aportesLat: Double = 48.8696896
-    let aportesLong: Double = 2.3649721
+    let aportesLat: Double = 48.88304
+    let aportesLong: Double = 2.3364
     
     let briganteTitle: String = "Il Brigante"
-    let briganteLat: Double = 48.8644479
-    let briganteLong: Double = 2.3679266
+    let briganteLat: Double = 48.89194
+    let briganteLong: Double = 2.34
     
     //montmartre bars
     let particulierTitle: String = "Le Très Particulier"
-    let particulierLat: Double = 48.8684879
-    let particulierLong: Double = 2.3595929
+    let particulierLat: Double = 48.88796
+    let particulierLong: Double = 2.33526
     
     let prohiboTitle: String = "Prohibo"
-    let prohiboLat: Double = 48.8753225
-    let prohiboLong: Double = 2.35802
+    let prohiboLat: Double = 48.88658
+    let prohiboLong: Double = 2.33577
     
     let persifleurTitle: String = "Persifleur"
-    let persifleurLat: Double = 48.8724781
-    let persifleurLong: Double = 2.3632998
+    let persifleurLat: Double = 48.88521
+    let persifleurLong: Double = 2.33723
     
     let marlusseTitle: String = "Marlusse Et Lapin"
-    let marlusseLat: Double = 48.8654558
-    let marlusseLong: Double = 2.3798288
+    let marlusseLat: Double = 48.88372
+    let marlusseLong: Double = 2.33676
     
     var soulkitchen: Properties!
     var tiborna: Properties!
@@ -835,8 +838,8 @@ class Location {
     
     func getMontmartreCenter() -> Properties {
         var center = Properties()
-        center.lattitude = martinFocusLat
-        center.longitude = martinFocusLong
+        center.lattitude = montmartreFocusLat
+        center.longitude = montmartreFocusLong
         return center
     }
     

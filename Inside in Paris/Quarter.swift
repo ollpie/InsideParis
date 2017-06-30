@@ -160,7 +160,7 @@ class Quarter {
             result = locations.getAllMartinsLocations()
             break
         case 2:
-            result = locations.getAllMaraisLocations()
+            result = locations.getAllMontmartreLocations()
             break
         default:
             break
