@@ -14,13 +14,18 @@ class MapsViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var mapView: GMSMapView!
     var locations: [[Properties]]!
+    var centerLattitude: Double!
+    var centerLongitutde: Double!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         locations = appDelegate.currentQuarter.getLocations()
+        let center = appDelegate.currentQuarter.getCenter()
+        centerLattitude = center.lattitude
+        centerLongitutde = center.longitude
         
-        mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: self.view.bounds.height*0.123, width: self.view.bounds.width, height: self.view.bounds.height*0.88), camera: GMSCameraPosition.camera(withLatitude: 48.86, longitude: 2.35, zoom: 14))
+        mapView = GMSMapView.map(withFrame: CGRect(x: 0, y: self.view.bounds.height*0.123, width: self.view.bounds.width, height: self.view.bounds.height*0.88), camera: GMSCameraPosition.camera(withLatitude: centerLattitude, longitude: centerLongitutde, zoom: 15))
         self.view.addSubview(mapView)
         
         setMarker()

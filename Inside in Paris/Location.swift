@@ -10,8 +10,8 @@ import Foundation
 
 class Location {
     
-    let maraisFocusLat = 48.860516
-    let maraisFoculLong = 2.362543
+    let maraisFocusLat = 48.861820
+    let maraisFoculLong = 2.359358
     
     let martinFocusLat = 48.8724781
     let martinFocusLong = 2.3632998
