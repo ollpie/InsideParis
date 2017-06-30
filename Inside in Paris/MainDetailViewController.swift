@@ -71,7 +71,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         initialContentOffset = scrollView.contentOffset
     }
     
-    func scrollViewDidBeginDecelerating(_ scrollView: UIScrollView) {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if (self.lastContentOffset > scrollView.contentOffset.x) {
             print("links")
             currentPage -= 1

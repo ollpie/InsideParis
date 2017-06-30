@@ -16,8 +16,8 @@ class Location {
     let martinFocusLat = 48.8724781
     let martinFocusLong = 2.3632998
     
-    let montmartreFocusLat = 48.88915
-    let montmartreFocusLong = 2.3423
+    let montmartreFocusLat = 48.88543
+    let montmartreFocusLong = 2.33636
     
     //marais cafes
     let cafeothequeTitle: String = "Cafeothèque"
@@ -301,7 +301,7 @@ class Location {
     let cousinpaulLat: Double = 48.88422
     let cousinpaulLong: Double = 2.34203
     
-    let sauverTitle: String = "Sauver Le Monde"
+    let sauverTitle: String = "Sauver Le Monde des Hommes"
     let sauverLat: Double = 48.88352
     let sauverLong: Double = 2.34159
     
@@ -310,11 +310,11 @@ class Location {
     let vingtLat: Double = 48.88628
     let vingtLong: Double = 2.33332
     
-    let balancoireTitle: String = "La Balaçoire"
+    let balancoireTitle: String = "La Balançoire"
     let balancoireLat: Double = 48.88527
     let balancoireLong: Double = 2.33523
     
-    let aportesTitle: String = "Les Aportes de Pigalle"
+    let aportesTitle: String = "Les Apôtres de Pigalle"
     let aportesLat: Double = 48.88304
     let aportesLong: Double = 2.3364
     
@@ -327,7 +327,7 @@ class Location {
     let particulierLat: Double = 48.88796
     let particulierLong: Double = 2.33526
     
-    let prohiboTitle: String = "Prohibo"
+    let prohiboTitle: String = "Prohibido"
     let prohiboLat: Double = 48.88658
     let prohiboLong: Double = 2.33577
     
