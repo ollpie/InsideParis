@@ -15,13 +15,16 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let screenSize: CGRect = UIScreen.main.bounds
     var backgroundImage: UIImageView!
-    var lastContentOffset: CGFloat = 0
     var currentPage: Int = 1
     var category = 0
     var categoryURL: String!
     var categoryWidth: Int!
     var categoryHeight: Int!
     var btn: UIButton!
+    var currentContentOffset: CGFloat = 0
+    var ContentOffsetAfterPaging: CGFloat = 0
+    var lastContentOffset: CGFloat = 0
+    
     var initialContentOffset: CGPoint!
     
     override func viewDidLoad() {
@@ -72,19 +75,32 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        if (self.lastContentOffset > scrollView.contentOffset.x) {
+        if (self.ContentOffsetAfterPaging > scrollView.contentOffset.x) {
             print("links")
-            currentPage -= 1
             scrollToTop()
             btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
-        else if (self.lastContentOffset < scrollView.contentOffset.x) {
+        else if (self.ContentOffsetAfterPaging < scrollView.contentOffset.x) {
             print("rechts")
-            currentPage += 1
             scrollToTop()
             btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
-        self.lastContentOffset = scrollView.contentOffset.x
+
+        print("hallo")
+        self.ContentOffsetAfterPaging = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        currentContentOffset = scrollView.contentOffset.x
+        if currentContentOffset>(lastContentOffset+screenSize.width/2) {
+            lastContentOffset = lastContentOffset+screenSize.width
+            currentPage += 1
+            print("page increased: ", currentPage)
+        } else if currentContentOffset<(lastContentOffset-screenSize.width/2) {
+            lastContentOffset = lastContentOffset-screenSize.width
+            currentPage -= 1
+            print("page decreased: ", currentPage)
+        }
     }
     
     /*func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -146,7 +162,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollToTop() {
-        print(lastContentOffset)
         print(currentPage)
         switch currentPage {
         case 1:

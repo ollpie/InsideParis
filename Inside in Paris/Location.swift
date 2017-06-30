@@ -200,7 +200,7 @@ class Location {
     
     let valentineTitle: String = "Blue Valentine"
     let valentineLat: Double = 48.8675372
-    let valentineLong: Double = 2.3680767
+    let valentineLong: Double = 2.37026
     
     let mammaTitle: String = "Ober Mamma"
     let mammaLat: Double = 48.8644479
