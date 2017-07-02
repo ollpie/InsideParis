@@ -37,7 +37,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func setupUI() {
         self.scrollView.delegate = self
-        
         backgroundImage = UIImageView()
         backgroundImage.frame = CGRect(x: 0, y: 0, width: screenSize.width * CGFloat(categoryWidth), height: screenSize.height * CGFloat(categoryHeight))
         backgroundImage.image = UIImage(named: categoryURL)
@@ -69,100 +68,53 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         performSegue(withIdentifier: "toSingleMapLocation", sender: self)
     }
     
-    //scrollView stuf
+    //scrollView stuff
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         initialContentOffset = scrollView.contentOffset
+        print(initialContentOffset)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+                initialContentOffset = scrollView.contentOffset
         if (self.ContentOffsetAfterPaging > scrollView.contentOffset.x) {
-            print("links")
             scrollToTop()
             btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
         else if (self.ContentOffsetAfterPaging < scrollView.contentOffset.x) {
-            print("rechts")
             scrollToTop()
             btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
-
-        print("hallo")
         self.ContentOffsetAfterPaging = scrollView.contentOffset.x
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updatePageCount()
+        blockDiagonalScrolling()
+    }
+    
+    func updatePageCount() {
         currentContentOffset = scrollView.contentOffset.x
         if currentContentOffset>(lastContentOffset+screenSize.width/2) {
             lastContentOffset = lastContentOffset+screenSize.width
             currentPage += 1
-            print("page increased: ", currentPage)
         } else if currentContentOffset<(lastContentOffset-screenSize.width/2) {
             lastContentOffset = lastContentOffset-screenSize.width
             currentPage -= 1
-            print("page decreased: ", currentPage)
         }
     }
     
-    /*func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollDirection: ScrollDirection = determineScrollDirectionAxis()
-
-        if (scrollDirection == .ScrollDirectionVertical){
-
-        } else if (scrollDirection == .ScrollDirectionHorizontal){
-
+    func blockDiagonalScrolling(){
+        if (scrollView.contentOffset.x != self.initialContentOffset.x)
+        {
+            scrollView.isPagingEnabled = true;
+            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: self.initialContentOffset.y);
         } else {
-            var newOffset: CGPoint
-            if (scrollView.contentOffset.x > scrollView.contentOffset.y) {
-                newOffset = CGPoint(x: scrollView.contentOffset.x, y: initialContentOffset.y)
-            }else{
-                newOffset = CGPoint(x: initialContentOffset.x, y: scrollView.contentOffset.y)
-            }
-            scrollView.setContentOffset(newOffset, animated: false)
-        }
-    }*/
-    
-    func determineScrollDirection () -> ScrollDirection{
-
-        var scrollDirection: ScrollDirection
-        if (initialContentOffset.x != scrollView.contentOffset.x &&
-            initialContentOffset.y != scrollView.contentOffset.y) {
-            scrollDirection = .ScrollDirectionCrazy
-        } else {
-            if (initialContentOffset.x > scrollView.contentOffset.x) {
-                scrollDirection = .ScrollDirectionLeft
-            } else if (initialContentOffset.x < scrollView.contentOffset.x) {
-                scrollDirection = .ScrollDirectionRight
-            } else if (initialContentOffset.y > scrollView.contentOffset.y) {
-                scrollDirection = .ScrollDirectionUp
-            } else if (initialContentOffset.y < scrollView.contentOffset.y) {
-                scrollDirection = .ScrollDirectionDown
-            } else {
-                scrollDirection = .ScrollDirectionNone
-            }
-        }
-        
-        return scrollDirection;
-    }
-    
-    func determineScrollDirectionAxis() -> ScrollDirection {
-        let scrollDirection: ScrollDirection = determineScrollDirection()
-        
-        switch scrollDirection {
-        case .ScrollDirectionRight:
-            return .ScrollDirectionHorizontal
-        case .ScrollDirectionLeft:
-            return .ScrollDirectionHorizontal
-        case .ScrollDirectionUp:
-            return .ScrollDirectionVertical
-        case .ScrollDirectionDown:
-            return .ScrollDirectionVertical
-        default:
-            return .ScrollDirectionNone
+            scrollView.isPagingEnabled = true;
         }
     }
     
     func scrollToTop() {
-        print(currentPage)
         switch currentPage {
         case 1:
             determinePagePosition(xPos: 0)
@@ -172,6 +124,8 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
             determinePagePosition(xPos: Int(screenSize.width)*2)
         case 4:
             determinePagePosition(xPos: Int(screenSize.width)*3)
+        case 5:
+            determinePagePosition(xPos: Int(screenSize.width)*4)
         default:
             break
         }
