@@ -71,7 +71,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     //scrollView stuff
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         initialContentOffset = scrollView.contentOffset
-        print(initialContentOffset)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

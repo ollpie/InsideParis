@@ -47,7 +47,7 @@ class Quarter {
     let montmartreCulture: String = "kultur_montmartre"
     let montmartreRestaurants: String = "restaurants_montmartre"
     let montmartreShopping: String = "shopping_montmartre"
-    let montmartreLocal: String = "AboutMe"
+    let montmartreLocal: String = "local_montmartre"
     let montmartreCategoryURLs: [String]
     let montmartreCategoryWidth: [Int]
     let montmartreCategoryHeight: [Int]
@@ -70,7 +70,7 @@ class Quarter {
         montmartreCategoryWidth = [4, 4, 5, 4, 4, 1]
         maraisCategoryHeight = [3, 3, 3, 3, 3, 5]
         canalCategoryHeight = [3, 3, 3, 3, 3, 5]
-        montmartreCategoryHeight = [3, 3, 3, 3, 3, 2]
+        montmartreCategoryHeight = [3, 3, 3, 3, 3, 5]
         allCategoryURLs = [maraisCategoryURLs, canalCategoryURLs, montmartreCategoryURLs]
         allCategoryWidths = [maraisCategoryWidth, canalCategoryWidth, montmartreCategoryWidth]
         allCategoryHeights = [maraisCategoryHeight, canalCategoryHeight, montmartreCategoryHeight]
