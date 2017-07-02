@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31D45FF423F22E37CD037255 /* Pods_Inside_in_Paris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56FB8888E2EB7FAA16A25BA /* Pods_Inside_in_Paris.framework */; };
+		471526211F095FDD0014D169 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471526201F095FDD0014D169 /* AboutMeViewController.swift */; };
 		4717F8591EC43CF300CEF2BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717F8581EC43CF300CEF2BC /* AppDelegate.swift */; };
 		4717F85B1EC43CF300CEF2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717F85A1EC43CF300CEF2BC /* ViewController.swift */; };
 		4717F8601EC43CF300CEF2BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4717F85F1EC43CF300CEF2BC /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		019740349CB341C98EA7A122 /* Pods-Inside in ParisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inside in ParisTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inside in ParisTests/Pods-Inside in ParisTests.debug.xcconfig"; sourceTree = "<group>"; };
 		037ABE2DB187474EC1CC9CED /* Pods_Inside_in_ParisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inside_in_ParisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		112F7C8D466099D1CD1F0AED /* Pods-Inside in ParisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inside in ParisUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inside in ParisUITests/Pods-Inside in ParisUITests.release.xcconfig"; sourceTree = "<group>"; };
+		471526201F095FDD0014D169 /* AboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		4717F8551EC43CF300CEF2BC /* Inside in Paris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inside in Paris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4717F8581EC43CF300CEF2BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4717F85A1EC43CF300CEF2BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				4717F85A1EC43CF300CEF2BC /* ViewController.swift */,
+				471526201F095FDD0014D169 /* AboutMeViewController.swift */,
 				479E5A081EC4E97C008E47E5 /* QuarterOverViewController.swift */,
 				479E5A0A1EC4F772008E47E5 /* LeftRightTransitionSegue.swift */,
 				4794C1FF1EDFF39C00F9CCBA /* CategoryViewController.swift */,
@@ -531,6 +534,7 @@
 				479E5A0B1EC4F772008E47E5 /* LeftRightTransitionSegue.swift in Sources */,
 				4794C2001EDFF39C00F9CCBA /* CategoryViewController.swift in Sources */,
 				479E5A091EC4E97C008E47E5 /* QuarterOverViewController.swift in Sources */,
+				471526211F095FDD0014D169 /* AboutMeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
