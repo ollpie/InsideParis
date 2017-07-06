@@ -327,7 +327,7 @@ class Location {
     let particulierLat: Double = 48.88796
     let particulierLong: Double = 2.33526
     
-    let prohiboTitle: String = "Prohibido"
+    let prohiboTitle: String = "Proibido"
     let prohiboLat: Double = 48.88658
     let prohiboLong: Double = 2.33577
     

@@ -20,10 +20,23 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     var categoryURL: String!
     var categoryWidth: Int!
     var categoryHeight: Int!
-    var btn: UIButton!
+    var mapBtn: UIButton!
     var currentContentOffset: CGFloat = 0
     var ContentOffsetAfterPaging: CGFloat = 0
     var lastContentOffset: CGFloat = 0
+    var initialXPos: CGFloat!
+    var cameFromMapsView: Bool = false
+    var buttonXPos: CGFloat!
+    
+    @IBAction func backBtn(_ sender: UIButton) {
+        
+        if cameFromMapsView {
+            goBack(identifier: "backToMaps")
+            cameFromMapsView = false
+        } else {
+            goBack(identifier: "backToCategory")
+        }
+    }
     
     var initialContentOffset: CGPoint!
     
@@ -41,8 +54,15 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         backgroundImage.frame = CGRect(x: 0, y: 0, width: screenSize.width * CGFloat(categoryWidth), height: screenSize.height * CGFloat(categoryHeight))
         backgroundImage.image = UIImage(named: categoryURL)
         scrollView.addSubview(backgroundImage)
+        initialXPos = screenSize.width*CGFloat((currentPage-1))
+        buttonXPos  = calculateMapBtnXPos()
         setupConstraints()
         setupMapButtons()
+        initialContentOffset = CGPoint(x: initialXPos, y: 0)
+        currentContentOffset = initialXPos
+        ContentOffsetAfterPaging = initialXPos
+        lastContentOffset = initialXPos
+        scrollToTop()
     }
     
     func setupConstraints() {
@@ -57,11 +77,11 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     //Map stuff
     func setupMapButtons() {
-        btn = UIButton(type: UIButtonType.system)
-        btn.bounds = CGRect(x: 0, y: 0, width: screenSize.width, height: 190)
-        btn.center = CGPoint(x: screenSize.width/2, y: screenSize.height * CGFloat(categoryHeight)-80)
-        scrollView.addSubview(btn)
-        btn.addTarget(self, action: #selector(showSingleLocation(_:)), for: .touchUpInside)
+        mapBtn = UIButton(type: UIButtonType.system)
+        mapBtn.bounds = CGRect(x: 0, y: 0, width: screenSize.width, height: 190)
+        mapBtn.center = CGPoint(x: buttonXPos, y: screenSize.height * CGFloat(categoryHeight)-80)
+        scrollView.addSubview(mapBtn)
+        mapBtn.addTarget(self, action: #selector(showSingleLocation(_:)), for: .touchUpInside)
     }
     
     func showSingleLocation(_ button: UIButton) {
@@ -71,17 +91,18 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     //scrollView stuff
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         initialContentOffset = scrollView.contentOffset
+                print("initial Offset scroll begin: ", initialContentOffset)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-                initialContentOffset = scrollView.contentOffset
+        initialContentOffset = scrollView.contentOffset
         if (self.ContentOffsetAfterPaging > scrollView.contentOffset.x) {
             scrollToTop()
-            btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
+            mapBtn.center = CGPoint(x: calculateMapBtnXPos(), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
         else if (self.ContentOffsetAfterPaging < scrollView.contentOffset.x) {
             scrollToTop()
-            btn.center = CGPoint(x: (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width), y: screenSize.height * CGFloat(categoryHeight)-80)
+            mapBtn.center = CGPoint(x: calculateMapBtnXPos(), y: screenSize.height * CGFloat(categoryHeight)-80)
         }
         self.ContentOffsetAfterPaging = scrollView.contentOffset.x
         
@@ -94,6 +115,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func updatePageCount() {
         currentContentOffset = scrollView.contentOffset.x
+                print("current Offset: ", initialContentOffset)
         if currentContentOffset>(lastContentOffset+screenSize.width/2) {
             lastContentOffset = lastContentOffset+screenSize.width
             currentPage += 1
@@ -101,6 +123,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
             lastContentOffset = lastContentOffset-screenSize.width
             currentPage -= 1
         }
+        print("Page: ", currentPage)
     }
     
     func blockDiagonalScrolling(){
@@ -134,6 +157,10 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         scrollView.setContentOffset(CGPoint(x: xPos, y: 0), animated: true)
     }
     
+    func calculateMapBtnXPos() -> CGFloat {
+        return (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSingleMapLocation" {
             let controller = segue.destination as! SingpleMapLocationViewController
@@ -150,6 +177,10 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
         let segue = UnwindLeftRightTransitionSegue(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
         segue.perform()
+    }
+    
+    func goBack(identifier: String) {
+        performSegue(withIdentifier: identifier, sender: self)
     }
 }
 

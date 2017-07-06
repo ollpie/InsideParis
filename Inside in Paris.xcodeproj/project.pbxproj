@@ -16,6 +16,7 @@
 		4717F86E1EC43CF300CEF2BC /* Inside_in_ParisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717F86D1EC43CF300CEF2BC /* Inside_in_ParisTests.swift */; };
 		4717F8791EC43CF300CEF2BC /* Inside_in_ParisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717F8781EC43CF300CEF2BC /* Inside_in_ParisUITests.swift */; };
 		471C6F491EF28F2F0056CBD3 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471C6F481EF28F2F0056CBD3 /* MapsViewController.swift */; };
+		4725522C1F0A84F4002411A9 /* LexiconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4725522B1F0A84F4002411A9 /* LexiconViewController.swift */; };
 		474CB5F11ED227BE00CE4921 /* Quarter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474CB5F01ED227BE00CE4921 /* Quarter.swift */; };
 		4772819C1F04D0D0007EAF10 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4772819B1F04D0D0007EAF10 /* Location.swift */; };
 		4772819E1F050C9B007EAF10 /* SingpleMapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4772819D1F050C9B007EAF10 /* SingpleMapLocationViewController.swift */; };
@@ -69,6 +70,7 @@
 		4717F8781EC43CF300CEF2BC /* Inside_in_ParisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inside_in_ParisUITests.swift; sourceTree = "<group>"; };
 		4717F87A1EC43CF300CEF2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		471C6F481EF28F2F0056CBD3 /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		4725522B1F0A84F4002411A9 /* LexiconViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LexiconViewController.swift; sourceTree = "<group>"; };
 		474CB5F01ED227BE00CE4921 /* Quarter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quarter.swift; sourceTree = "<group>"; };
 		4772819B1F04D0D0007EAF10 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4772819D1F050C9B007EAF10 /* SingpleMapLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingpleMapLocationViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		47B1C8631EC46E7F005D1EB2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4725522B1F0A84F4002411A9 /* LexiconViewController.swift */,
 				4717F85A1EC43CF300CEF2BC /* ViewController.swift */,
 				471526201F095FDD0014D169 /* AboutMeViewController.swift */,
 				479E5A081EC4E97C008E47E5 /* QuarterOverViewController.swift */,
@@ -527,6 +530,7 @@
 				474CB5F11ED227BE00CE4921 /* Quarter.swift in Sources */,
 				4794C2021EE040DF00F9CCBA /* MainDetailViewController.swift in Sources */,
 				4717F85B1EC43CF300CEF2BC /* ViewController.swift in Sources */,
+				4725522C1F0A84F4002411A9 /* LexiconViewController.swift in Sources */,
 				471C6F491EF28F2F0056CBD3 /* MapsViewController.swift in Sources */,
 				4772819C1F04D0D0007EAF10 /* Location.swift in Sources */,
 				4772819E1F050C9B007EAF10 /* SingpleMapLocationViewController.swift in Sources */,

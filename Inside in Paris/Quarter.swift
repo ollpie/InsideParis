@@ -57,6 +57,7 @@ class Quarter {
     let allCategoryHeights: [[Int]]
     
     let locations: Location
+    var quarterLocations: [[Properties]]?
     
     var id: Int
     
@@ -76,6 +77,10 @@ class Quarter {
         allCategoryHeights = [maraisCategoryHeight, canalCategoryHeight, montmartreCategoryHeight]
         
         locations = Location()
+    }
+    
+    func getPage(name: String) {
+        
     }
     
     func getName() -> String {
@@ -151,21 +156,21 @@ class Quarter {
     }
     
     func getLocations() -> [[Properties]] {
-        var result: [[Properties]]?
+
         switch id {
         case 0:
-            result = locations.getAllMaraisLocations()
+            quarterLocations = locations.getAllMaraisLocations()
             break
         case 1:
-            result = locations.getAllMartinsLocations()
+            quarterLocations = locations.getAllMartinsLocations()
             break
         case 2:
-            result = locations.getAllMontmartreLocations()
+            quarterLocations = locations.getAllMontmartreLocations()
             break
         default:
             break
         }
-        return result!
+        return quarterLocations!
     }
     
     func getCenter() -> Properties {
