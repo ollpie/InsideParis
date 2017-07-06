@@ -18,6 +18,8 @@ class MapsViewController: UIViewController, GMSMapViewDelegate {
     var centerLattitude: Double!
     var centerLongitutde: Double!
     var locationPage: Int = 0
+    var locationCategory: Int = 0
+    var locationCategoryAndPAge: [Int]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +53,10 @@ class MapsViewController: UIViewController, GMSMapViewDelegate {
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
         print(marker.title! as Any)
         
+        locationCategoryAndPAge = appDelegate.currentQuarter.getCategoryAndPage(name: marker.title!)
         
-        
-        
-        
-        locationPage = 2
+        locationPage = locationCategoryAndPAge[1]
+        locationCategory = locationCategoryAndPAge[0]
         performSegue(withIdentifier: "mapToDetailView", sender: self)
     }
     
@@ -63,6 +64,7 @@ class MapsViewController: UIViewController, GMSMapViewDelegate {
         if segue.identifier == "mapToDetailView" {
             let controller = segue.destination as! MainDetailViewController
             controller.currentPage = locationPage
+            controller.category = locationCategory
             controller.cameFromMapsView = true
         }
     }

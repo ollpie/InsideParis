@@ -91,7 +91,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     //scrollView stuff
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         initialContentOffset = scrollView.contentOffset
-                print("initial Offset scroll begin: ", initialContentOffset)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
@@ -115,7 +114,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func updatePageCount() {
         currentContentOffset = scrollView.contentOffset.x
-                print("current Offset: ", initialContentOffset)
         if currentContentOffset>(lastContentOffset+screenSize.width/2) {
             lastContentOffset = lastContentOffset+screenSize.width
             currentPage += 1

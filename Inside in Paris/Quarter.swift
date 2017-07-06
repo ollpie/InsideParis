@@ -79,8 +79,20 @@ class Quarter {
         locations = Location()
     }
     
-    func getPage(name: String) {
-        
+    func getCategoryAndPage(name: String) -> [Int] {
+        var result: [Int]!
+        for i in 0...4 {
+            for j in 0...(quarterLocations?[i].count)!-1 {
+                
+                if quarterLocations?[i][j].name == name {
+                    print("getPage: ", name)
+                    print("Category: ", i)
+                    print("Page: ", j+1)
+                    result = [i, j+1]
+                }
+            }
+        }
+        return result
     }
     
     func getName() -> String {
