@@ -55,6 +55,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         backgroundImage.image = UIImage(named: categoryURL)
         scrollView.addSubview(backgroundImage)
         initialXPos = screenSize.width*CGFloat((currentPage-1))
+        print("initial Pos: ", initialXPos)
         buttonXPos  = calculateMapBtnXPos()
         setupConstraints()
         setupMapButtons()
@@ -63,6 +64,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         ContentOffsetAfterPaging = initialXPos
         lastContentOffset = initialXPos
         scrollToTop()
+        print("Actual initial page: ", currentPage)
     }
     
     func setupConstraints() {
@@ -121,7 +123,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
             lastContentOffset = lastContentOffset-screenSize.width
             currentPage -= 1
         }
-        print("Page: ", currentPage)
+        print("Current Page Count: ", currentPage)
     }
     
     func blockDiagonalScrolling(){
