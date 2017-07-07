@@ -23,7 +23,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if appDelegate.initialViewFirstUse {
+            let alert = UIAlertController(title: "Bienvenue", message: "Tippe auf eines der drei Stadtviertel, um es dir genauer anzusehen oder stöbere im Paris-Lexikon.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "D'accord", style: UIAlertActionStyle.default, handler: {(action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            appDelegate.wasUsedBefore(view: "initial")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +48,6 @@ class ViewController: UIViewController {
         setMaraisButton()
         setStMatainButton()
         setMontmatreButton()
-        //setLexiconButton()
     }
     
     //Setup Buttons

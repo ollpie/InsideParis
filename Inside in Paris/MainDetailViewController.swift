@@ -46,6 +46,18 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         categoryWidth = appDelegate.currentQuarter.getCategoryDetail(category: self.category).width
         categoryHeight = appDelegate.currentQuarter.getCategoryDetail(category: self.category).height
         setupUI()
+        showHintForFirstTime()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if appDelegate.mainViewFirstUse {
+            let alert = UIAlertController(title: "Bonne journée", message: "Wische nach unten, um mehr über einen Ort zu erfahren. Wische nach rechts oder links, um dir noch mehr Orte anzusehen. Tippe auf die Karte unten, um dir den jeweiligen Ort in dieser anzeigen zu lassen.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "D'accord", style: UIAlertActionStyle.default, handler: {(action) in
+                alert.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alert, animated: true, completion: nil)
+            appDelegate.wasUsedBefore(view: "main")
+        }
     }
     
     func setupUI() {
@@ -159,6 +171,10 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func calculateMapBtnXPos() -> CGFloat {
         return (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width)
+    }
+    
+    func showHintForFirstTime() {
+
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

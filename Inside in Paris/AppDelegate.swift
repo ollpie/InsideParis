@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var stMartin: Quarter!
     var montmartre: Quarter!
     var currentQuarter: Quarter!
+    var mainViewFirstUse: Bool = true
+    var initialViewFirstUse: Bool = true
+    var categoryViewFirstUse: Bool = true
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -49,6 +52,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func mainViewIsFirstUse() -> Bool {
+        return mainViewFirstUse
+    }
+    
+    func initialViewIsFirstUse() -> Bool {
+        return initialViewFirstUse
+    }
+    
+    func categoryViewIsFirstUse() -> Bool {
+        return categoryViewFirstUse
+    }
+    
+    func wasUsedBefore(view: String){
+        switch view {
+        case "initial":
+            initialViewFirstUse = false
+            break
+        case "main":
+            mainViewFirstUse = false
+            break
+        case "category":
+            categoryViewFirstUse = false
+            break
+        default:
+            break
+        }
     }
     
 }
