@@ -27,6 +27,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     var initialXPos: CGFloat!
     var cameFromMapsView: Bool = false
     var buttonXPos: CGFloat!
+    var cameNotFromLocal: Bool = true
     
     @IBAction func backBtn(_ sender: UIButton) {
         
@@ -50,7 +51,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if appDelegate.mainViewFirstUse {
+        if appDelegate.mainViewFirstUse && cameNotFromLocal{
             let alert = UIAlertController(title: "Bonne journée", message: "Wische nach unten, um mehr über einen Ort zu erfahren. Wische nach rechts oder links, um dir noch mehr Orte anzusehen. Tippe auf die Karte unten, um dir den jeweiligen Ort in dieser anzeigen zu lassen.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "D'accord", style: UIAlertActionStyle.default, handler: {(action) in
                 alert.dismiss(animated: true, completion: nil)
