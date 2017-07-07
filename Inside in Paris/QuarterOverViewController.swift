@@ -56,8 +56,14 @@ class QuarterOverViewController: UIViewController {
         playerLayer.frame = CGRect(x: self.quarterTitle.frame.width*0.05, y: -self.quarterTitle.frame.width*0.145, width: self.quarterTitle.frame.width*0.927, height: self.quarterTitle.frame.height*0.927)
         self.view.layer.addSublayer(playerLayer)
         player.play()
+        
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player.currentItem, queue: nil, using: { (_) in
+            DispatchQueue.main.async {
+                player.seek(to: kCMTimeZero)
+                player.play()
+            }
+        })
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
