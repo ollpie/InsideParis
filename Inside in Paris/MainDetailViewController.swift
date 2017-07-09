@@ -28,9 +28,11 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     var cameFromMapsView: Bool = false
     var buttonXPos: CGFloat!
     var cameNotFromLocal: Bool = true
+    var viewWasVisited: Bool = false
+    var hello: Bool = false
     
     @IBAction func backBtn(_ sender: UIButton) {
-        
+        viewWasVisited = true
         if cameFromMapsView {
             goBack(identifier: "backToMaps")
             cameFromMapsView = false
@@ -47,10 +49,12 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         categoryWidth = appDelegate.currentQuarter.getCategoryDetail(category: self.category).width
         categoryHeight = appDelegate.currentQuarter.getCategoryDetail(category: self.category).height
         setupUI()
-        showHintForFirstTime()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        if !hello {
+            scrollView.contentOffset = CGPoint(x: screenSize.width*CGFloat(currentPage-1), y: 0)
+        }
         if appDelegate.mainViewFirstUse && cameNotFromLocal{
             let alert = UIAlertController(title: "Bonne journée", message: "Wische nach unten, um mehr über einen Ort zu erfahren. Wische nach rechts oder links, um dir noch mehr Orte anzusehen. Tippe auf die Karte unten, um dir den jeweiligen Ort in dieser anzeigen zu lassen.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "D'accord", style: UIAlertActionStyle.default, handler: {(action) in
@@ -68,7 +72,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         backgroundImage.image = UIImage(named: categoryURL)
         scrollView.addSubview(backgroundImage)
         initialXPos = screenSize.width*CGFloat((currentPage-1))
-        print("initial Pos: ", initialXPos)
         buttonXPos  = calculateMapBtnXPos()
         setupConstraints()
         setupMapButtons()
@@ -76,8 +79,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         currentContentOffset = initialXPos
         ContentOffsetAfterPaging = initialXPos
         lastContentOffset = initialXPos
-        scrollToTop()
-        print("Actual initial page: ", currentPage)
     }
     
     func setupConstraints() {
@@ -85,8 +86,8 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         let bottomConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
         let leadingConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
         let trailingConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        let widthConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.width*4)
-        let heightConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.height*3)
+        let widthConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.width*CGFloat(categoryWidth))
+        let heightConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.height*CGFloat(categoryHeight))
         scrollView.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint, widthConstraint, heightConstraint])
     }
     
@@ -101,6 +102,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func showSingleLocation(_ button: UIButton) {
         performSegue(withIdentifier: "toSingleMapLocation", sender: self)
+        hello = true
     }
     
     //scrollView stuff
@@ -136,7 +138,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
             lastContentOffset = lastContentOffset-screenSize.width
             currentPage -= 1
         }
-        print("Current Page Count: ", currentPage)
     }
     
     func blockDiagonalScrolling(){
@@ -174,10 +175,6 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         return (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width)
     }
     
-    func showHintForFirstTime() {
-
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSingleMapLocation" {
             let controller = segue.destination as! SingpleMapLocationViewController
@@ -199,8 +196,4 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     func goBack(identifier: String) {
         performSegue(withIdentifier: identifier, sender: self)
     }
-}
-
-enum ScrollDirection {
-    case ScrollDirectionNone, ScrollDirectionCrazy, ScrollDirectionUp, ScrollDirectionDown, ScrollDirectionLeft, ScrollDirectionRight, ScrollDirectionHorizontal, ScrollDirectionVertical
 }

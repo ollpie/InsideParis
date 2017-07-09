@@ -66,6 +66,7 @@ class MapsViewController: UIViewController, GMSMapViewDelegate {
             controller.currentPage = locationPage
             controller.category = locationCategory
             controller.cameFromMapsView = true
+            controller.viewWasVisited = false
         }
     }
     

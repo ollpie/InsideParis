@@ -92,7 +92,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cM2-Ai-C5h">
-                                <rect key="frame" x="357" y="96" width="45" height="44"/>
+                                <rect key="frame" x="298" y="96" width="104" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="closeButton:" destination="eyo-6W-lnc" eventType="touchUpInside" id="JhG-7a-nbD"/>
@@ -116,7 +116,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Nj-mY-atm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wFc-TF-Jv9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-12" y="832.53373313343332"/>
+            <point key="canvasLocation" x="-13.043478260869566" y="832.33695652173924"/>
         </scene>
         <!--About Me View Controller-->
         <scene sceneID="kZ0-PW-PZd">
@@ -437,7 +437,7 @@
                                 <rect key="frame" x="0.0" y="28" width="84" height="61"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="hwB-UW-qaY" kind="unwind" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindToDetailViewWithSegue:" id="Z1g-Zr-9CS"/>
+                                    <segue destination="hwB-UW-qaY" kind="unwind" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindToDetailViewWithSegue:" id="AHn-6X-2EI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsh-R0-QZ8">
@@ -464,8 +464,8 @@
         <image name="navigation_main" width="1333" height="2367"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="pHo-uh-t8K"/>
+        <segue reference="ZZY-Ad-HpA"/>
         <segue reference="N5w-ug-ewJ"/>
-        <segue reference="qh9-7U-SvX"/>
-        <segue reference="rmG-YB-7Y8"/>
     </inferredMetricsTieBreakers>
 </document>
