@@ -31,6 +31,8 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     var viewWasVisited: Bool = false
     var hello: Bool = false
     
+    @IBOutlet weak var pageControll: UIPageControl!
+    
     @IBAction func backBtn(_ sender: UIButton) {
         viewWasVisited = true
         if cameFromMapsView {
@@ -54,6 +56,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         if !hello {
             scrollView.contentOffset = CGPoint(x: screenSize.width*CGFloat(currentPage-1), y: 0)
+            pageControll.currentPage = currentPage-1
         }
         if appDelegate.mainViewFirstUse && cameNotFromLocal{
             let alert = UIAlertController(title: "Bonne journée", message: "Wische nach unten, um mehr über einen Ort zu erfahren. Wische nach rechts oder links, um dir noch mehr Orte anzusehen. Tippe auf die Karte unten, um dir den jeweiligen Ort in dieser anzeigen zu lassen.", preferredStyle: UIAlertControllerStyle.alert)
@@ -79,6 +82,9 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         currentContentOffset = initialXPos
         ContentOffsetAfterPaging = initialXPos
         lastContentOffset = initialXPos
+        
+        pageControll.frame.origin.y = screenSize.height*0.05397
+        pageControll.numberOfPages = categoryWidth
     }
     
     func setupConstraints() {
@@ -134,9 +140,11 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         if currentContentOffset>(lastContentOffset+screenSize.width/2) {
             lastContentOffset = lastContentOffset+screenSize.width
             currentPage += 1
+            pageControll.currentPage = currentPage-1
         } else if currentContentOffset<(lastContentOffset-screenSize.width/2) {
             lastContentOffset = lastContentOffset-screenSize.width
             currentPage -= 1
+            pageControll.currentPage = currentPage-1
         }
     }
     
