@@ -13,40 +13,47 @@ class CategoryViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var btnID = 0
     var showUsageHint = true
+    var local = false
     
     @IBAction func cafeBtn(_ sender: UIButton) {
         btnID = 0
         showUsageHint = true
+        local = false
         triggerSegue(identifier: "toDetail")
     }
 
     @IBAction func cultureBtn(_ sender: UIButton) {
         btnID = 1
         showUsageHint = true
+        local = false
         triggerSegue(identifier: "toDetail")
     }
 
     @IBAction func shoppingBtn(_ sender: UIButton) {
         btnID = 2
         showUsageHint = true
+        local = false
         triggerSegue(identifier: "toDetail")
     }
 
     @IBAction func restBtn(_ sender: UIButton) {
         btnID = 3
         showUsageHint = true
+        local = false
         triggerSegue(identifier: "toDetail")
     }
     
     @IBAction func barBtn(_ sender: UIButton) {
         btnID = 4
         showUsageHint = true
+        local = false
         triggerSegue(identifier: "toDetail")
     }
     
     @IBAction func localReportBtn(_ sender: UIButton) {
         btnID = 5
         showUsageHint = false
+        local = true
         triggerSegue(identifier: "toDetail")
     }
     
@@ -85,6 +92,7 @@ class CategoryViewController: UIViewController {
             let controller = segue.destination as! MainDetailViewController
             controller.category = btnID
             controller.cameNotFromLocal = showUsageHint
+            controller.isLocal = local
         }
     }
 

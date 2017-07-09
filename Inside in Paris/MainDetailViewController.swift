@@ -29,7 +29,8 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     var buttonXPos: CGFloat!
     var cameNotFromLocal: Bool = true
     var viewWasVisited: Bool = false
-    var hello: Bool = false
+    var cameFromSingleMapView: Bool = false
+    var isLocal: Bool = false
     
     @IBOutlet weak var pageControll: UIPageControl!
     
@@ -54,12 +55,12 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if !hello {
+        if !cameFromSingleMapView {
             scrollView.contentOffset = CGPoint(x: screenSize.width*CGFloat(currentPage-1), y: 0)
             pageControll.currentPage = currentPage-1
         }
         if appDelegate.mainViewFirstUse && cameNotFromLocal{
-            let alert = UIAlertController(title: "Bonne journée", message: "Wische nach unten, um mehr über einen Ort zu erfahren. Wische nach rechts oder links, um dir noch mehr Orte anzusehen. Tippe auf die Karte unten, um dir den jeweiligen Ort in dieser anzeigen zu lassen.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Bonne journée", message: "Wische nach unten, um mehr über einen Ort zu erfahren. Wische nach rechts oder links, um dir noch mehr Orte anzusehen. Tippe auf die Map unten, um dir den jeweiligen Ort in der Karte anzeigen zu lassen.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "D'accord", style: UIAlertActionStyle.default, handler: {(action) in
                 alert.dismiss(animated: true, completion: nil)
             }))
@@ -83,6 +84,11 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
         ContentOffsetAfterPaging = initialXPos
         lastContentOffset = initialXPos
         
+        if isLocal {
+            pageControll.isHidden = true
+        } else if !isLocal {
+            pageControll.isHidden = false
+        }
         pageControll.frame.origin.y = screenSize.height*0.05397
         pageControll.numberOfPages = categoryWidth
     }
@@ -108,7 +114,7 @@ class MainDetailViewController: UIViewController, UIScrollViewDelegate {
     
     func showSingleLocation(_ button: UIButton) {
         performSegue(withIdentifier: "toSingleMapLocation", sender: self)
-        hello = true
+        cameFromSingleMapView = true
     }
     
     //scrollView stuff
