@@ -59,6 +59,11 @@ class Quarter {
     let locations: Location
     var quarterLocations: [[Properties]]?
     
+    let quarterCategoryHeights = [3, 3, 3, 3, 3, 5]
+    let maraisWidth = [4, 4, 5, 4, 3, 1]
+    let canalWidth = [4, 5, 5, 4, 4, 1]
+    let montmartreWidth = [4, 4, 5, 4, 4, 1]
+    
     var id: Int
     
     init(id: Int) {
@@ -66,12 +71,12 @@ class Quarter {
         maraisCategoryURLs = [maraisCafes, maraisCulture, maraisShopping, maraisRestaurants, maraisBars, maraisLocal]
         canalCategoryURLs = [canalCafes, canalCulture, canalShopping, canalRestaurants, canalBars, canalLocal]
         montmartreCategoryURLs = [montmartreCafes, montmartreCulture, montmartreShopping, montmartreRestaurants, montmartreBars, montmartreLocal]
-        maraisCategoryWidth = [4, 4, 5, 4, 3, 1]
-        canalCategoryWidth = [4, 5, 5, 4, 4, 1]
-        montmartreCategoryWidth = [4, 4, 5, 4, 4, 1]
-        maraisCategoryHeight = [3, 3, 3, 3, 3, 5]
-        canalCategoryHeight = [3, 3, 3, 3, 3, 5]
-        montmartreCategoryHeight = [3, 3, 3, 3, 3, 5]
+        maraisCategoryWidth = maraisWidth
+        canalCategoryWidth = canalWidth
+        montmartreCategoryWidth = montmartreWidth
+        maraisCategoryHeight = quarterCategoryHeights
+        canalCategoryHeight = quarterCategoryHeights
+        montmartreCategoryHeight = quarterCategoryHeights
         allCategoryURLs = [maraisCategoryURLs, canalCategoryURLs, montmartreCategoryURLs]
         allCategoryWidths = [maraisCategoryWidth, canalCategoryWidth, montmartreCategoryWidth]
         allCategoryHeights = [maraisCategoryHeight, canalCategoryHeight, montmartreCategoryHeight]
@@ -83,11 +88,7 @@ class Quarter {
         var result: [Int]!
         for i in 0...4 {
             for j in 0...(quarterLocations?[i].count)!-1 {
-                
                 if quarterLocations?[i][j].name == name {
-                    print("getPage: ", name)
-                    print("Category: ", i)
-                    print("Page: ", j+1)
                     result = [i, j+1]
                 }
             }

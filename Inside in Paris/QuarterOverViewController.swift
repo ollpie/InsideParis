@@ -40,7 +40,7 @@ class QuarterOverViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         showPreviewVideo()
         if appDelegate.categoryViewFirstUse {
-            let alert = UIAlertController(title: "Salut", message: "Schau dir Orte genauer an, indem du sie in der Karte auswählst oder wähle eine Kategorie.", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Salut", message: Strings().quarterOverviewMessage, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "D'accord", style: UIAlertActionStyle.default, handler: {(action) in
                 alert.dismiss(animated: true, completion: nil)
             }))

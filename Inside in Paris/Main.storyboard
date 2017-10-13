@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nGj-Jy-hCG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="nGj-Jy-hCG">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="W2b-cj-juf">
             <objects>
-                <viewController id="nGj-Jy-hCG" customClass="ViewController" customModule="Inside_in_Paris" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nGj-Jy-hCG" customClass="HomeViewController" customModule="Inside_in_Paris" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ghB-il-4xy"/>
                         <viewControllerLayoutGuide type="bottom" id="U3w-Pz-7FI"/>
@@ -209,7 +209,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cd2-ob-M5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="bTS-2c-HyN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="940" y="-563.56821589205401"/>
+            <point key="canvasLocation" x="750" y="-571"/>
         </scene>
         <!--Quarter Over View Controller-->
         <scene sceneID="wkO-ci-HBs">
@@ -271,7 +271,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrk-8F-uog" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Nzy-a3-wGK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="805.60000000000002" y="108.39580209895054"/>
+            <point key="canvasLocation" x="751" y="107"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="wwe-3v-GT9">
@@ -363,10 +363,10 @@
             </objects>
             <point key="canvasLocation" x="1504.8" y="104.7976011994003"/>
         </scene>
-        <!--Main Detail View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Gdy-XI-goj">
             <objects>
-                <viewController id="M7Q-nA-L4U" customClass="MainDetailViewController" customModule="Inside_in_Paris" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="M7Q-nA-L4U" customClass="DetailViewController" customModule="Inside_in_Paris" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rpb-QT-SaO"/>
                         <viewControllerLayoutGuide type="bottom" id="daP-gr-qr8"/>
@@ -420,7 +420,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9i-SG-aGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="JVl-ca-8K3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2258" y="38"/>
+            <point key="canvasLocation" x="2252" y="107"/>
         </scene>
         <!--Singple Map Location View Controller-->
         <scene sceneID="o3h-fH-5Iw">
@@ -470,7 +470,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="N5w-ug-ewJ"/>
-        <segue reference="qh9-7U-SvX"/>
-        <segue reference="rmG-YB-7Y8"/>
+        <segue reference="ZZY-Ad-HpA"/>
+        <segue reference="pHo-uh-t8K"/>
     </inferredMetricsTieBreakers>
 </document>
