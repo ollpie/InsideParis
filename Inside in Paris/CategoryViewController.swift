@@ -11,58 +11,59 @@ import UIKit
 class CategoryViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let cafeBtn: Int = 0
+    let cultureBtn: Int = 1
+    let shoppingBtn: Int = 2
+    let restaurantBtn: Int = 3
+    let barBtn: Int = 4
+    let localReportBtn: Int = 5
     var btnID = 0
     var showUsageHint = true
     var local = false
     
     @IBAction func cafeBtn(_ sender: UIButton) {
-        btnID = 0
+        btnID = cafeBtn
         showUsageHint = true
         local = false
         triggerSegue(identifier: "toDetail")
     }
 
     @IBAction func cultureBtn(_ sender: UIButton) {
-        btnID = 1
+        btnID = cultureBtn
         showUsageHint = true
         local = false
         triggerSegue(identifier: "toDetail")
     }
 
     @IBAction func shoppingBtn(_ sender: UIButton) {
-        btnID = 2
+        btnID = shoppingBtn
         showUsageHint = true
         local = false
         triggerSegue(identifier: "toDetail")
     }
 
     @IBAction func restBtn(_ sender: UIButton) {
-        btnID = 3
+        btnID = restaurantBtn
         showUsageHint = true
         local = false
         triggerSegue(identifier: "toDetail")
     }
     
     @IBAction func barBtn(_ sender: UIButton) {
-        btnID = 4
+        btnID = barBtn
         showUsageHint = true
         local = false
         triggerSegue(identifier: "toDetail")
     }
     
     @IBAction func localReportBtn(_ sender: UIButton) {
-        btnID = 5
+        btnID = localReportBtn
         showUsageHint = false
         local = true
         triggerSegue(identifier: "toDetail")
     }
     
-    /*@IBAction func homeBtn(_ sender: UIButton) {
-        performSegue(withIdentifier: "goHomeFromCat", sender: self)
-    }*/
-    
     @IBOutlet weak var backgrdView: UIImageView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +90,7 @@ class CategoryViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail" {
-            let controller = segue.destination as! MainDetailViewController
+            let controller = segue.destination as! DetailViewController
             controller.category = btnID
             controller.cameNotFromLocal = showUsageHint
             controller.isLocal = local

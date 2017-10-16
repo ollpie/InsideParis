@@ -62,7 +62,7 @@ class MapsViewController: UIViewController, GMSMapViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "mapToDetailView" {
-            let controller = segue.destination as! MainDetailViewController
+            let controller = segue.destination as! DetailViewController
             controller.currentPage = locationPage
             controller.category = locationCategory
             controller.cameFromMapsView = true

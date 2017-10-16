@@ -10,7 +10,7 @@
 		31D45FF423F22E37CD037255 /* Pods_Inside_in_Paris.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56FB8888E2EB7FAA16A25BA /* Pods_Inside_in_Paris.framework */; };
 		471526211F095FDD0014D169 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 471526201F095FDD0014D169 /* AboutMeViewController.swift */; };
 		4717F8591EC43CF300CEF2BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717F8581EC43CF300CEF2BC /* AppDelegate.swift */; };
-		4717F85B1EC43CF300CEF2BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717F85A1EC43CF300CEF2BC /* ViewController.swift */; };
+		4717F85B1EC43CF300CEF2BC /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717F85A1EC43CF300CEF2BC /* HomeViewController.swift */; };
 		4717F8601EC43CF300CEF2BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4717F85F1EC43CF300CEF2BC /* Assets.xcassets */; };
 		4717F8631EC43CF300CEF2BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4717F8611EC43CF300CEF2BC /* LaunchScreen.storyboard */; };
 		4717F86E1EC43CF300CEF2BC /* Inside_in_ParisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4717F86D1EC43CF300CEF2BC /* Inside_in_ParisTests.swift */; };
@@ -21,15 +21,13 @@
 		4772819C1F04D0D0007EAF10 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4772819B1F04D0D0007EAF10 /* Location.swift */; };
 		4772819E1F050C9B007EAF10 /* SingpleMapLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4772819D1F050C9B007EAF10 /* SingpleMapLocationViewController.swift */; };
 		4794C2001EDFF39C00F9CCBA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794C1FF1EDFF39C00F9CCBA /* CategoryViewController.swift */; };
-		4794C2021EE040DF00F9CCBA /* MainDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794C2011EE040DF00F9CCBA /* MainDetailViewController.swift */; };
+		4794C2021EE040DF00F9CCBA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794C2011EE040DF00F9CCBA /* DetailViewController.swift */; };
 		479E5A091EC4E97C008E47E5 /* QuarterOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E5A081EC4E97C008E47E5 /* QuarterOverViewController.swift */; };
 		479E5A0B1EC4F772008E47E5 /* LeftRightTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E5A0A1EC4F772008E47E5 /* LeftRightTransitionSegue.swift */; };
+		47B39AB61F908F7400F9C170 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B39AB51F908F7400F9C170 /* Strings.swift */; };
 		47D22F5F1ED4CE24007A04E5 /* Montmartre_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F5D1ED4CE24007A04E5 /* Montmartre_ohne.mp4 */; };
-		47D22F601ED4CE24007A04E5 /* Montmartre.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F5E1ED4CE24007A04E5 /* Montmartre.mp4 */; };
 		47D22F631ED4CE2F007A04E5 /* Marais_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F611ED4CE2F007A04E5 /* Marais_ohne.mp4 */; };
-		47D22F641ED4CE2F007A04E5 /* Marais.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F621ED4CE2F007A04E5 /* Marais.mp4 */; };
 		47D22F671ED4CE3A007A04E5 /* Canal_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F651ED4CE3A007A04E5 /* Canal_ohne.mp4 */; };
-		47D22F681ED4CE3A007A04E5 /* Canal.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F661ED4CE3A007A04E5 /* Canal.mp4 */; };
 		47F5FC481EFBD65600698FDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F5FC471EFBD65600698FDC /* Main.storyboard */; };
 		D5E3FC059FD399227ECCD0A8 /* Pods_Inside_in_ParisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB33EB7A62BC8C7D710FB2A /* Pods_Inside_in_ParisUITests.framework */; };
 		DBC3FB89741826D26FAE0F49 /* Pods_Inside_in_ParisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037ABE2DB187474EC1CC9CED /* Pods_Inside_in_ParisTests.framework */; };
@@ -59,7 +57,7 @@
 		471526201F095FDD0014D169 /* AboutMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		4717F8551EC43CF300CEF2BC /* Inside in Paris.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Inside in Paris.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4717F8581EC43CF300CEF2BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4717F85A1EC43CF300CEF2BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4717F85A1EC43CF300CEF2BC /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4717F85F1EC43CF300CEF2BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4717F8621EC43CF300CEF2BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4717F8641EC43CF300CEF2BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,15 +73,13 @@
 		4772819B1F04D0D0007EAF10 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4772819D1F050C9B007EAF10 /* SingpleMapLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingpleMapLocationViewController.swift; sourceTree = "<group>"; };
 		4794C1FF1EDFF39C00F9CCBA /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		4794C2011EE040DF00F9CCBA /* MainDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainDetailViewController.swift; sourceTree = "<group>"; };
+		4794C2011EE040DF00F9CCBA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		479E5A081EC4E97C008E47E5 /* QuarterOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarterOverViewController.swift; sourceTree = "<group>"; };
 		479E5A0A1EC4F772008E47E5 /* LeftRightTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftRightTransitionSegue.swift; sourceTree = "<group>"; };
+		47B39AB51F908F7400F9C170 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		47D22F5D1ED4CE24007A04E5 /* Montmartre_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montmartre_ohne.mp4; sourceTree = "<group>"; };
-		47D22F5E1ED4CE24007A04E5 /* Montmartre.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montmartre.mp4; sourceTree = "<group>"; };
 		47D22F611ED4CE2F007A04E5 /* Marais_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marais_ohne.mp4; sourceTree = "<group>"; };
-		47D22F621ED4CE2F007A04E5 /* Marais.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marais.mp4; sourceTree = "<group>"; };
 		47D22F651ED4CE3A007A04E5 /* Canal_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Canal_ohne.mp4; sourceTree = "<group>"; };
-		47D22F661ED4CE3A007A04E5 /* Canal.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Canal.mp4; sourceTree = "<group>"; };
 		47F5FC471EFBD65600698FDC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8D3FA9DF467DA939249C4E6A /* Pods-Inside in ParisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inside in ParisUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inside in ParisUITests/Pods-Inside in ParisUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAB33EB7A62BC8C7D710FB2A /* Pods_Inside_in_ParisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inside_in_ParisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +150,7 @@
 				4717F85F1EC43CF300CEF2BC /* Assets.xcassets */,
 				4717F8611EC43CF300CEF2BC /* LaunchScreen.storyboard */,
 				4717F8641EC43CF300CEF2BC /* Info.plist */,
+				47B39AB51F908F7400F9C170 /* Strings.swift */,
 			);
 			path = "Inside in Paris";
 			sourceTree = "<group>";
@@ -180,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				474CB5F01ED227BE00CE4921 /* Quarter.swift */,
+				479E5A0A1EC4F772008E47E5 /* LeftRightTransitionSegue.swift */,
 				4772819B1F04D0D0007EAF10 /* Location.swift */,
 			);
 			name = Model;
@@ -189,11 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				47D22F5D1ED4CE24007A04E5 /* Montmartre_ohne.mp4 */,
-				47D22F5E1ED4CE24007A04E5 /* Montmartre.mp4 */,
 				47D22F611ED4CE2F007A04E5 /* Marais_ohne.mp4 */,
-				47D22F621ED4CE2F007A04E5 /* Marais.mp4 */,
 				47D22F651ED4CE3A007A04E5 /* Canal_ohne.mp4 */,
-				47D22F661ED4CE3A007A04E5 /* Canal.mp4 */,
 			);
 			name = Videos;
 			sourceTree = "<group>";
@@ -202,12 +197,11 @@
 			isa = PBXGroup;
 			children = (
 				4725522B1F0A84F4002411A9 /* LexiconViewController.swift */,
-				4717F85A1EC43CF300CEF2BC /* ViewController.swift */,
+				4717F85A1EC43CF300CEF2BC /* HomeViewController.swift */,
 				471526201F095FDD0014D169 /* AboutMeViewController.swift */,
 				479E5A081EC4E97C008E47E5 /* QuarterOverViewController.swift */,
-				479E5A0A1EC4F772008E47E5 /* LeftRightTransitionSegue.swift */,
 				4794C1FF1EDFF39C00F9CCBA /* CategoryViewController.swift */,
-				4794C2011EE040DF00F9CCBA /* MainDetailViewController.swift */,
+				4794C2011EE040DF00F9CCBA /* DetailViewController.swift */,
 				471C6F481EF28F2F0056CBD3 /* MapsViewController.swift */,
 				4772819D1F050C9B007EAF10 /* SingpleMapLocationViewController.swift */,
 			);
@@ -359,11 +353,8 @@
 				47D22F5F1ED4CE24007A04E5 /* Montmartre_ohne.mp4 in Resources */,
 				47D22F631ED4CE2F007A04E5 /* Marais_ohne.mp4 in Resources */,
 				4717F8631EC43CF300CEF2BC /* LaunchScreen.storyboard in Resources */,
-				47D22F601ED4CE24007A04E5 /* Montmartre.mp4 in Resources */,
-				47D22F681ED4CE3A007A04E5 /* Canal.mp4 in Resources */,
 				47D22F671ED4CE3A007A04E5 /* Canal_ohne.mp4 in Resources */,
 				47F5FC481EFBD65600698FDC /* Main.storyboard in Resources */,
-				47D22F641ED4CE2F007A04E5 /* Marais.mp4 in Resources */,
 				4717F8601EC43CF300CEF2BC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,12 +519,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				474CB5F11ED227BE00CE4921 /* Quarter.swift in Sources */,
-				4794C2021EE040DF00F9CCBA /* MainDetailViewController.swift in Sources */,
-				4717F85B1EC43CF300CEF2BC /* ViewController.swift in Sources */,
+				4794C2021EE040DF00F9CCBA /* DetailViewController.swift in Sources */,
+				4717F85B1EC43CF300CEF2BC /* HomeViewController.swift in Sources */,
 				4725522C1F0A84F4002411A9 /* LexiconViewController.swift in Sources */,
 				471C6F491EF28F2F0056CBD3 /* MapsViewController.swift in Sources */,
 				4772819C1F04D0D0007EAF10 /* Location.swift in Sources */,
 				4772819E1F050C9B007EAF10 /* SingpleMapLocationViewController.swift in Sources */,
+				47B39AB61F908F7400F9C170 /* Strings.swift in Sources */,
 				4717F8591EC43CF300CEF2BC /* AppDelegate.swift in Sources */,
 				479E5A0B1EC4F772008E47E5 /* LeftRightTransitionSegue.swift in Sources */,
 				4794C2001EDFF39C00F9CCBA /* CategoryViewController.swift in Sources */,
