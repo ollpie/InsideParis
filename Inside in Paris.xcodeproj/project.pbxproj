@@ -308,7 +308,7 @@
 				TargetAttributes = {
 					4717F8541EC43CF300CEF2BC = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 87X3F5FDGG;
+						DevelopmentTeam = MP4A274X3B;
 						ProvisioningStyle = Automatic;
 					};
 					4717F8681EC43CF300CEF2BC = {
@@ -673,11 +673,11 @@
 			baseConfigurationReference = CEB6258F4B54E62745D5C118 /* Pods-Inside in Paris.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 87X3F5FDGG;
+				DEVELOPMENT_TEAM = MP4A274X3B;
 				INFOPLIST_FILE = "Inside in Paris/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "oliver.Inside-in-Paris";
+				PRODUCT_BUNDLE_IDENTIFIER = "oliver.Inside-Paris";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -688,11 +688,11 @@
 			baseConfigurationReference = BCECC8C8ED608604E7336A76 /* Pods-Inside in Paris.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 87X3F5FDGG;
+				DEVELOPMENT_TEAM = MP4A274X3B;
 				INFOPLIST_FILE = "Inside in Paris/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "oliver.Inside-in-Paris";
+				PRODUCT_BUNDLE_IDENTIFIER = "oliver.Inside-Paris";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
