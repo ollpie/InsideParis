@@ -33,21 +33,21 @@
                                 <rect key="frame" x="300" y="28" width="75" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="Y6B-Gf-s9z" kind="custom" customClass="LeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="TUu-hz-MqI"/>
+                                    <segue destination="Y6B-Gf-s9z" kind="custom" customClass="RightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="TUu-hz-MqI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LiL-kb-QJK">
                                 <rect key="frame" x="225" y="318" width="121" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="eyo-6W-lnc" kind="custom" customClass="LeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="8Wo-dl-8Ia"/>
+                                    <segue destination="eyo-6W-lnc" kind="custom" customClass="RightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="8Wo-dl-8Ia"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="m7j-Wt-8Hh" kind="custom" identifier="toOverview" customClass="LeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="jh9-bm-fYg"/>
+                        <segue destination="m7j-Wt-8Hh" kind="custom" identifier="toOverview" customClass="RightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="jh9-bm-fYg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LzC-jk-jFV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,7 +81,7 @@
                                 <rect key="frame" x="0.0" y="24" width="63" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="wFc-TF-Jv9" kind="unwind" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="LHH-sv-NZL"/>
+                                    <segue destination="wFc-TF-Jv9" kind="unwind" customClass="UnwindRightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="LHH-sv-NZL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLV-ab-JeS">
@@ -141,7 +141,7 @@
                                 <rect key="frame" x="0.0" y="25" width="66" height="54"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="meT-wX-ucM" kind="unwind" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="PK9-iT-v8y"/>
+                                    <segue destination="meT-wX-ucM" kind="unwind" customClass="UnwindRightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="PK9-iT-v8y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qss-MM-SMG">
@@ -189,7 +189,7 @@
                                 <rect key="frame" x="0.0" y="28" width="64" height="55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="bTS-2c-HyN" kind="unwind" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindtoQuarterOverviewWithSegue:" id="CpN-1A-z7x"/>
+                                    <segue destination="bTS-2c-HyN" kind="unwind" customClass="UnwindRightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindtoQuarterOverviewWithSegue:" id="CpN-1A-z7x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cn3-nt-SUv">
@@ -203,7 +203,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <segue destination="M7Q-nA-L4U" kind="custom" identifier="mapToDetailView" customClass="LeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="N5w-ug-ewJ"/>
+                        <segue destination="M7Q-nA-L4U" kind="custom" identifier="mapToDetailView" customClass="RightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="N5w-ug-ewJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cd2-ob-M5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,7 +249,7 @@
                                 <rect key="frame" x="0.0" y="28" width="61" height="57"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="Nzy-a3-wGK" kind="unwind" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="Arg-2A-eM6"/>
+                                    <segue destination="Nzy-a3-wGK" kind="unwind" customClass="UnwindRightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindWithSegue:" id="Arg-2A-eM6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DwC-bR-pap">
@@ -264,14 +264,14 @@
                     </view>
                     <connections>
                         <outlet property="quarterTitle" destination="3yJ-Wi-tA5" id="PHn-WM-Z6u"/>
-                        <segue destination="bUp-Ci-YDr" kind="custom" identifier="toCategory" customClass="LeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="ZZY-Ad-HpA"/>
-                        <segue destination="Lu4-9y-AFG" kind="custom" identifier="toMapFromCategory" customClass="LeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="pHo-uh-t8K"/>
+                        <segue destination="bUp-Ci-YDr" kind="custom" identifier="toCategory" customClass="RightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="ZZY-Ad-HpA"/>
+                        <segue destination="Lu4-9y-AFG" kind="custom" identifier="toMapFromCategory" customClass="RightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="pHo-uh-t8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qrk-8F-uog" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Nzy-a3-wGK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="751" y="107"/>
+            <point key="canvasLocation" x="750" y="108"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="wwe-3v-GT9">
@@ -297,7 +297,7 @@
                                 <rect key="frame" x="0.0" y="28" width="73" height="55"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="IYe-F2-g4m" kind="unwind" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindtoQuarterOverviewWithSegue:" id="H2b-iC-3WH"/>
+                                    <segue destination="IYe-F2-g4m" kind="unwind" customClass="UnwindRightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindtoQuarterOverviewWithSegue:" id="H2b-iC-3WH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lox-zy-1q4">
@@ -355,7 +355,7 @@
                     </view>
                     <connections>
                         <outlet property="backgrdView" destination="Idh-np-4HT" id="vB6-nx-UUf"/>
-                        <segue destination="M7Q-nA-L4U" kind="custom" identifier="toDetail" customClass="LeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="53V-pX-0qn"/>
+                        <segue destination="M7Q-nA-L4U" kind="custom" identifier="toDetail" customClass="RightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="53V-pX-0qn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EUZ-Rg-dlt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -412,9 +412,9 @@
                     <connections>
                         <outlet property="pageControll" destination="bCE-1b-0rJ" id="uB9-ZO-vaS"/>
                         <outlet property="scrollView" destination="6vO-lN-kZL" id="7fo-6y-Fko"/>
-                        <segue destination="QCA-Cm-YoQ" kind="custom" identifier="toSingleMapLocation" customClass="LeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="SIA-29-2zl"/>
-                        <segue destination="bUp-Ci-YDr" kind="custom" identifier="backToCategory" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="rmG-YB-7Y8"/>
-                        <segue destination="Lu4-9y-AFG" kind="custom" identifier="backToMaps" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="qh9-7U-SvX"/>
+                        <segue destination="QCA-Cm-YoQ" kind="custom" identifier="toSingleMapLocation" customClass="RightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="SIA-29-2zl"/>
+                        <segue destination="bUp-Ci-YDr" kind="custom" identifier="backToCategory" customClass="UnwindRightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="rmG-YB-7Y8"/>
+                        <segue destination="Lu4-9y-AFG" kind="custom" identifier="backToMaps" customClass="UnwindRightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" id="qh9-7U-SvX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w9i-SG-aGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -442,7 +442,7 @@
                                 <rect key="frame" x="0.0" y="25" width="76" height="56"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="hwB-UW-qaY" kind="unwind" customClass="UnwindLeftRightTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindToDetailViewWithSegue:" id="AHn-6X-2EI"/>
+                                    <segue destination="hwB-UW-qaY" kind="unwind" customClass="UnwindRightLeftTransitionSegue" customModule="Inside_in_Paris" customModuleProvider="target" unwindAction="prepareForUnwindToDetailViewWithSegue:" id="AHn-6X-2EI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsh-R0-QZ8">
@@ -469,8 +469,8 @@
         <image name="navigation_main" width="1333" height="2367"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="N5w-ug-ewJ"/>
-        <segue reference="ZZY-Ad-HpA"/>
-        <segue reference="pHo-uh-t8K"/>
+        <segue reference="53V-pX-0qn"/>
+        <segue reference="rmG-YB-7Y8"/>
+        <segue reference="qh9-7U-SvX"/>
     </inferredMetricsTieBreakers>
 </document>

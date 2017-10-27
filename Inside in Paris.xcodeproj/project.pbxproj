@@ -23,11 +23,11 @@
 		4794C2001EDFF39C00F9CCBA /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794C1FF1EDFF39C00F9CCBA /* CategoryViewController.swift */; };
 		4794C2021EE040DF00F9CCBA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4794C2011EE040DF00F9CCBA /* DetailViewController.swift */; };
 		479E5A091EC4E97C008E47E5 /* QuarterOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E5A081EC4E97C008E47E5 /* QuarterOverViewController.swift */; };
-		479E5A0B1EC4F772008E47E5 /* LeftRightTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E5A0A1EC4F772008E47E5 /* LeftRightTransitionSegue.swift */; };
+		479E5A0B1EC4F772008E47E5 /* RightLeftTransitionSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479E5A0A1EC4F772008E47E5 /* RightLeftTransitionSegue.swift */; };
 		47B39AB61F908F7400F9C170 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B39AB51F908F7400F9C170 /* Strings.swift */; };
-		47D22F5F1ED4CE24007A04E5 /* Montmartre_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F5D1ED4CE24007A04E5 /* Montmartre_ohne.mp4 */; };
-		47D22F631ED4CE2F007A04E5 /* Marais_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F611ED4CE2F007A04E5 /* Marais_ohne.mp4 */; };
-		47D22F671ED4CE3A007A04E5 /* Canal_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47D22F651ED4CE3A007A04E5 /* Canal_ohne.mp4 */; };
+		47B39ABA1F90C1F100F9C170 /* Canal_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47B39AB71F90BF5B00F9C170 /* Canal_ohne.mp4 */; };
+		47B39ABB1F90C1F100F9C170 /* Marais_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47B39AB91F90BF5B00F9C170 /* Marais_ohne.mp4 */; };
+		47EA2B811FA344920096C488 /* Montmartre_ohne.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 47EA2B801FA3443D0096C488 /* Montmartre_ohne.mp4 */; };
 		47F5FC481EFBD65600698FDC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47F5FC471EFBD65600698FDC /* Main.storyboard */; };
 		D5E3FC059FD399227ECCD0A8 /* Pods_Inside_in_ParisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAB33EB7A62BC8C7D710FB2A /* Pods_Inside_in_ParisUITests.framework */; };
 		DBC3FB89741826D26FAE0F49 /* Pods_Inside_in_ParisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 037ABE2DB187474EC1CC9CED /* Pods_Inside_in_ParisTests.framework */; };
@@ -75,11 +75,11 @@
 		4794C1FF1EDFF39C00F9CCBA /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		4794C2011EE040DF00F9CCBA /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		479E5A081EC4E97C008E47E5 /* QuarterOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarterOverViewController.swift; sourceTree = "<group>"; };
-		479E5A0A1EC4F772008E47E5 /* LeftRightTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftRightTransitionSegue.swift; sourceTree = "<group>"; };
+		479E5A0A1EC4F772008E47E5 /* RightLeftTransitionSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightLeftTransitionSegue.swift; sourceTree = "<group>"; };
 		47B39AB51F908F7400F9C170 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
-		47D22F5D1ED4CE24007A04E5 /* Montmartre_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montmartre_ohne.mp4; sourceTree = "<group>"; };
-		47D22F611ED4CE2F007A04E5 /* Marais_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marais_ohne.mp4; sourceTree = "<group>"; };
-		47D22F651ED4CE3A007A04E5 /* Canal_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Canal_ohne.mp4; sourceTree = "<group>"; };
+		47B39AB71F90BF5B00F9C170 /* Canal_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Canal_ohne.mp4; sourceTree = "<group>"; };
+		47B39AB91F90BF5B00F9C170 /* Marais_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Marais_ohne.mp4; sourceTree = "<group>"; };
+		47EA2B801FA3443D0096C488 /* Montmartre_ohne.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Montmartre_ohne.mp4; sourceTree = "<group>"; };
 		47F5FC471EFBD65600698FDC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8D3FA9DF467DA939249C4E6A /* Pods-Inside in ParisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inside in ParisUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inside in ParisUITests/Pods-Inside in ParisUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAB33EB7A62BC8C7D710FB2A /* Pods_Inside_in_ParisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Inside_in_ParisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,7 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				474CB5F01ED227BE00CE4921 /* Quarter.swift */,
-				479E5A0A1EC4F772008E47E5 /* LeftRightTransitionSegue.swift */,
+				479E5A0A1EC4F772008E47E5 /* RightLeftTransitionSegue.swift */,
 				4772819B1F04D0D0007EAF10 /* Location.swift */,
 			);
 			name = Model;
@@ -186,9 +186,9 @@
 		4756FB661ED49CEC00984A6C /* Videos */ = {
 			isa = PBXGroup;
 			children = (
-				47D22F5D1ED4CE24007A04E5 /* Montmartre_ohne.mp4 */,
-				47D22F611ED4CE2F007A04E5 /* Marais_ohne.mp4 */,
-				47D22F651ED4CE3A007A04E5 /* Canal_ohne.mp4 */,
+				47B39AB71F90BF5B00F9C170 /* Canal_ohne.mp4 */,
+				47EA2B801FA3443D0096C488 /* Montmartre_ohne.mp4 */,
+				47B39AB91F90BF5B00F9C170 /* Marais_ohne.mp4 */,
 			);
 			name = Videos;
 			sourceTree = "<group>";
@@ -350,10 +350,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47D22F5F1ED4CE24007A04E5 /* Montmartre_ohne.mp4 in Resources */,
-				47D22F631ED4CE2F007A04E5 /* Marais_ohne.mp4 in Resources */,
+				47EA2B811FA344920096C488 /* Montmartre_ohne.mp4 in Resources */,
+				47B39ABA1F90C1F100F9C170 /* Canal_ohne.mp4 in Resources */,
+				47B39ABB1F90C1F100F9C170 /* Marais_ohne.mp4 in Resources */,
 				4717F8631EC43CF300CEF2BC /* LaunchScreen.storyboard in Resources */,
-				47D22F671ED4CE3A007A04E5 /* Canal_ohne.mp4 in Resources */,
 				47F5FC481EFBD65600698FDC /* Main.storyboard in Resources */,
 				4717F8601EC43CF300CEF2BC /* Assets.xcassets in Resources */,
 			);
@@ -527,7 +527,7 @@
 				4772819E1F050C9B007EAF10 /* SingpleMapLocationViewController.swift in Sources */,
 				47B39AB61F908F7400F9C170 /* Strings.swift in Sources */,
 				4717F8591EC43CF300CEF2BC /* AppDelegate.swift in Sources */,
-				479E5A0B1EC4F772008E47E5 /* LeftRightTransitionSegue.swift in Sources */,
+				479E5A0B1EC4F772008E47E5 /* RightLeftTransitionSegue.swift in Sources */,
 				4794C2001EDFF39C00F9CCBA /* CategoryViewController.swift in Sources */,
 				479E5A091EC4E97C008E47E5 /* QuarterOverViewController.swift in Sources */,
 				471526211F095FDD0014D169 /* AboutMeViewController.swift in Sources */,

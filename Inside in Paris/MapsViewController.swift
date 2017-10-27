@@ -12,7 +12,9 @@ import GoogleMaps
 class MapsViewController: UIViewController, GMSMapViewDelegate {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let markerDescription: String = "Für mehr Informationen hier tippen."
+    let category: Int = 0
+    let page: Int = 1
+    
     var mapView: GMSMapView!
     var locations: [[Properties]]!
     var centerLattitude: Double!
@@ -43,7 +45,7 @@ class MapsViewController: UIViewController, GMSMapViewDelegate {
                 let marker = GMSMarker()
                 marker.position = CLLocationCoordinate2D(latitude: locations[i][j].lattitude, longitude: locations[i][j].longitude)
                 marker.title = locations[i][j].name
-                marker.snippet = markerDescription
+                marker.snippet = Strings().markerDescription
                 marker.icon = UIImage(data: UIImagePNGRepresentation(image)!, scale: 10)
                 marker.map = mapView
             }
@@ -51,12 +53,9 @@ class MapsViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func mapView(_ mapView: GMSMapView, didTapInfoWindowOf marker: GMSMarker) {
-        print(marker.title! as Any)
-        
         locationCategoryAndPAge = appDelegate.currentQuarter.getCategoryAndPage(name: marker.title!)
-        
-        locationPage = locationCategoryAndPAge[1]
-        locationCategory = locationCategoryAndPAge[0]
+        locationPage = locationCategoryAndPAge[page]
+        locationCategory = locationCategoryAndPAge[category]
         performSegue(withIdentifier: "mapToDetailView", sender: self)
     }
     
@@ -75,7 +74,7 @@ class MapsViewController: UIViewController, GMSMapViewDelegate {
     }
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        let segue = UnwindLeftRightTransitionSegue(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
+        let segue = UnwindRightLeftTransitionSegue(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
         segue.perform()
     }
     

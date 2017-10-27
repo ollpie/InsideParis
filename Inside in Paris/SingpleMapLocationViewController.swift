@@ -12,6 +12,7 @@ import GoogleMaps
 class SingpleMapLocationViewController: UIViewController {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     var mapView: GMSMapView!
     var locations: [[Properties]]!
     var category = 0

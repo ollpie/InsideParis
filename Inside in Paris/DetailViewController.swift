@@ -14,6 +14,11 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let screenSize: CGRect = UIScreen.main.bounds
+    let constraintConstant: CGFloat = 0
+    let constraintMultiplier: CGFloat = 1
+    let factorTwo: CGFloat = 2
+    let mapBtnOffset: CGFloat = 80
+    
     var backgroundImage: UIImageView!
     var currentPage: Int = 1
     var category = 0
@@ -55,10 +60,18 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        returnFromSingleMapView()
+        handleInitialAlert()
+    }
+    
+    func returnFromSingleMapView() {
         if !cameFromSingleMapView {
             scrollView.contentOffset = CGPoint(x: screenSize.width*CGFloat(currentPage-1), y: 0)
             pageControll.currentPage = currentPage-1
         }
+    }
+    
+    func handleInitialAlert() {
         if appDelegate.mainViewFirstUse && cameNotFromLocal{
             let alert = UIAlertController(title: "Bonne journée", message: Strings().detailViewMessage, preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "D'accord", style: UIAlertActionStyle.default, handler: {(action) in
@@ -83,23 +96,20 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         currentContentOffset = initialXPos
         ContentOffsetAfterPaging = initialXPos
         lastContentOffset = initialXPos
-        
-        if isLocal {
-            pageControll.isHidden = true
-        } else if !isLocal {
-            pageControll.isHidden = false
-        }
-        pageControll.frame.origin.y = screenSize.height*0.05397
-        pageControll.numberOfPages = categoryWidth
+        setupPageControll()
+    }
+    
+    func calculateMapBtnXPos() -> CGFloat {
+        return (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width)
     }
     
     func setupConstraints() {
-        let topConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.top, multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 0)
-        let leadingConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.leading, multiplier: 1, constant: 0)
-        let trailingConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.trailing, multiplier: 1, constant: 0)
-        let widthConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.width*CGFloat(categoryWidth))
-        let heightConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: 1, constant: screenSize.height*CGFloat(categoryHeight))
+        let topConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.top, multiplier: constraintMultiplier, constant: constraintConstant)
+        let bottomConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.bottom, multiplier: constraintMultiplier, constant: constraintConstant)
+        let leadingConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.leading, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.leading, multiplier: constraintMultiplier, constant: constraintConstant)
+        let trailingConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.trailing, relatedBy: NSLayoutRelation.equal, toItem: self.scrollView, attribute: NSLayoutAttribute.trailing, multiplier: constraintMultiplier, constant: constraintConstant)
+        let widthConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.width, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: constraintMultiplier, constant: screenSize.width*CGFloat(categoryWidth))
+        let heightConstraint = NSLayoutConstraint(item: backgroundImage, attribute: NSLayoutAttribute.height, relatedBy: NSLayoutRelation.equal, toItem: nil, attribute: NSLayoutAttribute.notAnAttribute, multiplier: constraintMultiplier, constant: screenSize.height*CGFloat(categoryHeight))
         scrollView.addConstraints([topConstraint, bottomConstraint, leadingConstraint, trailingConstraint, widthConstraint, heightConstraint])
     }
     
@@ -116,6 +126,17 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         performSegue(withIdentifier: "toSingleMapLocation", sender: self)
         cameFromSingleMapView = true
     }
+
+    
+    func setupPageControll() {
+        if isLocal {
+            pageControll.isHidden = true
+        } else if !isLocal {
+            pageControll.isHidden = false
+        }
+        pageControll.frame.origin.y = screenSize.height*0.05397
+        pageControll.numberOfPages = categoryWidth
+    }
     
     //scrollView stuff
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -126,42 +147,13 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         initialContentOffset = scrollView.contentOffset
         if (self.ContentOffsetAfterPaging > scrollView.contentOffset.x) {
             scrollToTop()
-            mapBtn.center = CGPoint(x: calculateMapBtnXPos(), y: screenSize.height * CGFloat(categoryHeight)-80)
+            positionMapBtn()
         }
         else if (self.ContentOffsetAfterPaging < scrollView.contentOffset.x) {
             scrollToTop()
-            mapBtn.center = CGPoint(x: calculateMapBtnXPos(), y: screenSize.height * CGFloat(categoryHeight)-80)
+            positionMapBtn()
         }
         self.ContentOffsetAfterPaging = scrollView.contentOffset.x
-        
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        updatePageCount()
-        blockDiagonalScrolling()
-    }
-    
-    func updatePageCount() {
-        currentContentOffset = scrollView.contentOffset.x
-        if currentContentOffset>(lastContentOffset+screenSize.width/2) {
-            lastContentOffset = lastContentOffset+screenSize.width
-            currentPage += 1
-            pageControll.currentPage = currentPage-1
-        } else if currentContentOffset<(lastContentOffset-screenSize.width/2) {
-            lastContentOffset = lastContentOffset-screenSize.width
-            currentPage -= 1
-            pageControll.currentPage = currentPage-1
-        }
-    }
-    
-    func blockDiagonalScrolling(){
-        if (scrollView.contentOffset.x != self.initialContentOffset.x)
-        {
-            scrollView.isPagingEnabled = true;
-            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: self.initialContentOffset.y);
-        } else {
-            scrollView.isPagingEnabled = true;
-        }
     }
     
     func scrollToTop() {
@@ -181,12 +173,47 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
+    func positionMapBtn() {
+        mapBtn.center =  CGPoint(x: calculateMapBtnXPos(), y: screenSize.height * CGFloat(categoryHeight)-mapBtnOffset)
+    }
+    
     func determinePagePosition(xPos: Int) {
         scrollView.setContentOffset(CGPoint(x: xPos, y: 0), animated: true)
     }
     
-    func calculateMapBtnXPos() -> CGFloat {
-        return (screenSize.width/2)+CGFloat(CGFloat(currentPage-1)*screenSize.width)
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        updatePageCount()
+        blockDiagonalScrolling()
+    }
+    
+    func updatePageCount() {
+        currentContentOffset = scrollView.contentOffset.x
+        // scroll to left
+        if currentContentOffset>(lastContentOffset+screenSize.width/factorTwo) {
+            lastContentOffset = lastContentOffset+screenSize.width
+            currentPage += 1
+            // updates page indicator at the top of the screen
+            updatePageControll()
+        //scroll to right
+        } else if currentContentOffset<(lastContentOffset-screenSize.width/factorTwo) {
+            lastContentOffset = lastContentOffset-screenSize.width
+            currentPage -= 1
+            updatePageControll()
+        }
+    }
+    
+    func updatePageControll() {
+        pageControll.currentPage = currentPage-1
+    }
+    
+    func blockDiagonalScrolling(){
+        if (scrollView.contentOffset.x != self.initialContentOffset.x)
+        {
+            scrollView.isPagingEnabled = true;
+            scrollView.contentOffset = CGPoint(x: scrollView.contentOffset.x, y: self.initialContentOffset.y);
+        } else {
+            scrollView.isPagingEnabled = true;
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -203,7 +230,7 @@ class DetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     override func unwind(for unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        let segue = UnwindLeftRightTransitionSegue(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
+        let segue = UnwindRightLeftTransitionSegue(identifier: unwindSegue.identifier, source: unwindSegue.source, destination: unwindSegue.destination)
         segue.perform()
     }
     

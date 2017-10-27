@@ -12,7 +12,6 @@ class Quarter {
 
     let maraisTitle: String = "marais_gesamt"
     let maraisCategory: String = "menu_marais"
-    let maraisWSVideoURL: String = "Marais"
     let maraisWOVideoURL: String = "Marais_ohne"
     let maraisBars: String = "bars_marais"
     let maraisCafes: String = "cafes_marais"
@@ -26,7 +25,6 @@ class Quarter {
     
     let canalTitle: String = "martin_gesamt"
     let martinCategory: String = "menu_martin"
-    let canalWSVideoURL: String = "Canal"
     let canalWOVideoURL: String = "Canal_ohne"
     let canalBars: String = "bars_canal"
     let canalCafes: String = "cafes_canal"
@@ -40,7 +38,6 @@ class Quarter {
     
     let montmartreTitle: String = "montmartre_gesamt"
     let montmartreCategory: String = "menu_montmartre"
-    let montmartreWSVideoURL: String = "Montmartre"
     let montmartreWOVideoURL: String = "Montmartre_ohne"
     let montmartreBars: String = "bars_montmartre"
     let montmartreCafes: String = "cafes_montmartre"
@@ -59,10 +56,15 @@ class Quarter {
     let locations: Location
     var quarterLocations: [[Properties]]?
     
+    //index 0 = bars, 1 = culture, 2 = shopping, 3 = restaurants, 4 = bars, 5 = local report
     let quarterCategoryHeights = [3, 3, 3, 3, 3, 5]
+    //index 0 = bars, 1 = culture, 2 = shopping, 3 = restaurants, 4 = bars, 5 = local report
     let maraisWidth = [4, 4, 5, 4, 3, 1]
+    //index 0 = bars, 1 = culture, 2 = shopping, 3 = restaurants, 4 = bars, 5 = local report
     let canalWidth = [4, 5, 5, 4, 4, 1]
+    //index 0 = bars, 1 = culture, 2 = shopping, 3 = restaurants, 4 = bars, 5 = local report
     let montmartreWidth = [4, 4, 5, 4, 4, 1]
+    let locationAmount: Int = 4
     
     var id: Int
     
@@ -84,9 +86,17 @@ class Quarter {
         locations = Location()
     }
     
+    func getWidths(locations: [[Properties]]) -> [Int] {
+        var result: [Int] = []
+        for i in 0...locations.count {
+            result.append(locations[i].count)
+        }
+        return result
+    }
+    
     func getCategoryAndPage(name: String) -> [Int] {
         var result: [Int]!
-        for i in 0...4 {
+        for i in 0...locationAmount {
             for j in 0...(quarterLocations?[i].count)!-1 {
                 if quarterLocations?[i][j].name == name {
                     result = [i, j+1]
@@ -125,24 +135,6 @@ class Quarter {
             break
         case 2:
             result = montmartreCategory
-            break
-        default:
-            break
-        }
-        return result!
-    }
-    
-    func getVideoURLWithSound() -> String {
-        var result: String?
-        switch id {
-        case 0:
-            result = maraisWSVideoURL
-            break
-        case 1:
-            result = canalWSVideoURL
-            break
-        case 2:
-            result = montmartreWSVideoURL
             break
         default:
             break
